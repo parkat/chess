@@ -1,4 +1,3 @@
 # chess
 chess thing 
-yup its chess
-STEPS
+yup its chess 
