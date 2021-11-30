@@ -16,11 +16,8 @@ public class Chess {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       //eat chess
-       // uihlhgiljgh
-        //kdfghlthlsdkjghlksdfjghldfkgh
-       //df.kghsdljkgbdlkgjhsdflgsflkjh
-       /ljhgljgljkghk
+   
+     
     }
     
 }
