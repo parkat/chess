@@ -1,12 +1,11 @@
 package chess;
 
-import javax.sound.sampled.*; 
-import java.io.*; 
+import java.io.*;
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.ArrayList;
+//commenting to test
 
 public class Chess extends JFrame implements Runnable {
     boolean animateFirstTime = true;
@@ -116,7 +115,7 @@ public class Chess extends JFrame implements Runnable {
         }
         
               
-        Board.Draw(g,this);
+        Board.Draw(g);
       /* 
        if(Player.players[1].winner == true)
          Board.win1(g);
