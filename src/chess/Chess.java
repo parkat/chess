@@ -1,10 +1,12 @@
 package chess;
 
-import java.io.*;
+import javax.sound.sampled.*; 
+import java.io.*; 
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Chess extends JFrame implements Runnable {
     boolean animateFirstTime = true;
