@@ -15,7 +15,7 @@ public class OvalPiece extends Piece{
         
         rocketAnim = Toolkit.getDefaultToolkit().getImage("./animShip.GIF");
     }
-   public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta,OvalPiece thisObj)   
+   public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta,Chess thisObj)   
    {
       drawImage(g,thisObj,rocketAnim,Window.getX(Window.getX(row*xdelta)),Window.getYNormal(Window.getY(ydelta*column)),0.0,-0.25,0.25 );
        g.fillOval(Window.getX(row*xdelta),Window.getY(ydelta*column), xdelta, ydelta);

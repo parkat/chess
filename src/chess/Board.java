@@ -24,7 +24,7 @@ public class Board {
        
     }
     
-    public static void Draw(Graphics2D g,OvalPiece thisObj) {
+    public static void Draw(Graphics2D g,chess thisObj) {
 //draw grid
     
         int ydelta = Window.getHeight2()/NUM_ROWS;
