@@ -24,7 +24,7 @@ public class Board {
        
     }
     
-    public static void Draw(Graphics2D g,chess thisObj) {
+    public static void Draw(Graphics2D g) {
 //draw grid
     
         int ydelta = Window.getHeight2()/NUM_ROWS;
@@ -50,7 +50,7 @@ public class Board {
             for (int zcol=0;zcol<NUM_COLUMNS;zcol++)        
             {
                 if (board[zrow][zcol] != null)
-                    board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta,thisObj);
+                    board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta);
             }
         }  
          if(Player.players[1].getWinner() == true&&Player.players[0].getWinner() == true)
