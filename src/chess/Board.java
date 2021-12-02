@@ -86,12 +86,12 @@ public class Board {
              ///Player play = Player.getTurn();
                //play.getColor();
                //
-             if(areConnected() == true){
-                 
-                 Player play = Player.getTurn();
-                 play.setWinner(true);
-                 return;
-             }
+//             if(areConnected() == true){
+//                 
+//                 Player play = Player.getTurn();
+//                 play.setWinner(true);
+//                 return;
+//             }
              
         Board yeet = new Board();
         int ydelta = Window.getHeight2()/NUM_ROWS;
@@ -142,16 +142,16 @@ public class Board {
          //  System.out.println("heyyy");
        
        
-      if(areConnected() == true){
-                 
-                 Player play = Player.getTurn();
-                 play.setWinner(true);
-                 return;
-             }
-      
+//      if(areConnected() == true){
+//                 
+//                 Player play = Player.getTurn();
+//                 play.setWinner(true);
+//                 return;
+//             }
+//      
         
        
-            if(board[0][0] != null && board[1][0] != null&& board[2][0] != null&& board[3][0] != null&& board[4][0] != null&& board[5][0] != null&& board[6][0] != null&& board[7][0] != null && areConnected() == false)               
+            if(board[0][0] != null && board[1][0] != null&& board[2][0] != null&& board[3][0] != null&& board[4][0] != null&& board[5][0] != null&& board[6][0] != null&& board[7][0] != null ) //areConnected() == false)               
             {
                 Player.players[1].setWinner(true);
                  Player.players[0].setWinner(true);
@@ -211,7 +211,7 @@ public class Board {
      
              
     
-     
+    /* 
      private static boolean areConnected(){
          
        final  int numconnect = 4;
@@ -305,10 +305,10 @@ public class Board {
         }
        
             }}}
-*/
+
         return false;
      }
-
+*/
 
 
 

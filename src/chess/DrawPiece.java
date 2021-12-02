@@ -15,7 +15,7 @@ class MyCanvas extends JComponent {
     Graphics2D g2 = (Graphics2D) g;
 
     Image img1 = Toolkit.getDefaultToolkit().getImage("bk.png");
-    g2.drawImage(img1, x, y, this);
+    g2.drawImage(img1, x, y,1000,1000, this);
     g2.finalize();
   }
 }
