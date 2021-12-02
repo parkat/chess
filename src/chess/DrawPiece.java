@@ -14,8 +14,11 @@ class MyCanvas extends JComponent {
   public void paint(Graphics g,int x,int y) {
     Graphics2D g2 = (Graphics2D) g;
 
-    Image img1 = Toolkit.getDefaultToolkit().getImage("bk.png");
+    Image img1 = Toolkit.getDefaultToolkit().getImage("./PNGs/bking.png");
     g2.drawImage(img1, x, y,100,100, this);
     g2.finalize();
   }
 }
+
+
+//   outerSpaceImage = Toolkit.getDefaultToolkit().getImage("./outerSpace.jpg");  
