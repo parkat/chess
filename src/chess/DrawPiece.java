@@ -11,21 +11,11 @@ import javax.swing.JFrame;
 
 class MyCanvas extends JComponent {
 
-  public void paint(Graphics g) {
+  public void paint(Graphics g,int x,int y) {
     Graphics2D g2 = (Graphics2D) g;
 
     Image img1 = Toolkit.getDefaultToolkit().getImage("bk.png");
-    g2.drawImage(img1, 100, 100, this);
+    g2.drawImage(img1, x, y, this);
     g2.finalize();
-  }
-}
-
-public class DrawPiece {
-  public static void main(String[] a) {
-    JFrame window = new JFrame();
-    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    window.setBounds(30, 30, 300, 300);
-    window.getContentPane().add(new MyCanvas());
-    window.setVisible(true);
   }
 }
