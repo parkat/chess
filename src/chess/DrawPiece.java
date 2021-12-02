@@ -9,8 +9,8 @@ import javax.swing.JComponent;
 class MyCanvas extends JComponent {
   public void paint(Graphics g,int x,int y) {
     Graphics2D g2 = (Graphics2D) g;
-    Image img1 = Toolkit.getDefaultToolkit().getImage("./bking.png");
-    g2.drawImage(img1, x, y,100,100, this);
+    Image img1 = Toolkit.getDefaultToolkit().getImage("./PNGs/yeet.png");
+    g2.drawImage(img1, x, y,70,70, this);
     g2.finalize();
   }
 }
