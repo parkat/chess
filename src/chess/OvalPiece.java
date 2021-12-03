@@ -19,11 +19,11 @@ public class OvalPiece extends Piece{
      super(_color);
     
     }
-   public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta)   
+   public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta, int num)   
    {
        MyCanvas ptr = new MyCanvas();
        
-       ptr.paint(g, Window.getX(row*xdelta), Window.getY(ydelta*column));
+       ptr.paint(g, Window.getX(row*xdelta), Window.getY(ydelta*column),num);
        //g.setColor(getColor());
         
        //g.fillOval(Window.getX(row*xdelta),Window.getY(ydelta*column), xdelta, ydelta);

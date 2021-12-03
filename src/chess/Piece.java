@@ -15,7 +15,7 @@ public abstract class Piece {
         return (color);
     }
 
-    public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta);
+    public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta, int nut);
       
 
     

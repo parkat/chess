@@ -50,7 +50,7 @@ public class Board {
             for (int zcol=0;zcol<NUM_COLUMNS;zcol++)        
             {
                 if (board[zrow][zcol] != null)
-                    board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta);
+                    board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta, 1);
             }
         }  
          if(Player.players[1].getWinner() == true&&Player.players[0].getWinner() == true)
