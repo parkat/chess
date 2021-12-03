@@ -8,6 +8,7 @@ public class Board {
     private final static int NUM_COLUMNS = 8;      
     public static Piece board[][] = new Piece[NUM_ROWS][NUM_COLUMNS];
     private static Highlight highlight;
+  
     
 
     public static void Reset() {
@@ -24,7 +25,7 @@ public class Board {
        
     }
     
-    public static void Draw(Graphics2D g) {
+    public static void Draw(Graphics2D g,Chess thisObj) {
 //draw grid
     
         int ydelta = Window.getHeight2()/NUM_ROWS;
@@ -50,7 +51,7 @@ public class Board {
             for (int zcol=0;zcol<NUM_COLUMNS;zcol++)        
             {
                 if (board[zrow][zcol] != null)
-                    board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta, 1);
+                    board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta, thisObj );
             }
         }  
          if(Player.players[1].getWinner() == true&&Player.players[0].getWinner() == true)
@@ -129,7 +130,7 @@ public class Board {
         }
         
        else  {
-            board[column][row] = new OvalPiece(Player.players[1].getColor());
+            board[column][row] = new DrawPiece(Player.players[1].getColor());
           
             Player.SwitchTurn();
        }

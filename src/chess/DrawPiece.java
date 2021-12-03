@@ -1,27 +1,47 @@
 package chess;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Toolkit;
+import javax.sound.sampled.*; 
+import java.io.*; 
+import java.awt.*;
+import java.awt.geom.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.ArrayList;
+import java.net.URL;
 
-import javax.swing.JComponent;
-class MyCanvas extends JComponent {
-  public void paint(Graphics g,int x,int y,int piece) {
+
+class DrawPiece extends Piece  {
+    DrawPiece(Color _color)
+    {
+     super(_color);
+    
+    }
+  public void draw (Graphics2D g,int row,int column,int xdelta,int ydelta,Chess thisObj) {
     Graphics2D g2 = (Graphics2D) g;
     Image bking;
-    Image wking;
     
-    if(piece ==1){
+  
+    
+
      bking = Toolkit.getDefaultToolkit().getImage("./PNGs/bking.png");
-    g2.drawImage(bking, x, y,70,70, this);
+    //drawImage(g,bking, Window.getX(row*xdelta), Window.getY(ydelta*column), this);
+    drawImage(g,thisObj,bking,Window.getX(row*xdelta),Window.getYNormal(ydelta*column),0.0,0.25,0.25 );
     }
-    if(piece == 2){
-     wking = Toolkit.getDefaultToolkit().getImage("./PNGs/wking.png");
-    g2.drawImage(wking, x, y,70,70, this);
-    }
-    g2.finalize();
-  }
+ public void drawImage(Graphics2D g,Chess thisObj,Image image,int xpos,int ypos,double rot,double xscale,double yscale) {
+        int width = image.getWidth(thisObj);
+        int height = image.getHeight(thisObj);
+        g.translate(xpos,ypos);
+        g.rotate(rot  * Math.PI/180.0);
+        g.scale( xscale , yscale );
+
+        g.drawImage(image,-width/2,-height/2,
+        width,height,thisObj);
+
+        g.scale( 1.0/xscale,1.0/yscale );
+        g.rotate(-rot  * Math.PI/180.0);
+        g.translate(-xpos,-ypos);
+    }    
 }
 
 
