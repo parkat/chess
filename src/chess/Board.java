@@ -123,7 +123,7 @@ public class Board {
       
        if (Player.getTurn() == Player.players[0] ) { 
            
-        board[column][row] = new OvalPiece(Player.players[0].getColor() );
+        board[column][row] = new DrawPiece(Player.players[0].getColor() );
             Player.SwitchTurn();
             
         
