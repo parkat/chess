@@ -1,14 +1,6 @@
 package chess;
 
-import java.awt.Graphics;
-import javax.sound.sampled.*; 
-import java.io.*; 
 import java.awt.*;
-import java.awt.geom.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.util.ArrayList;
-import java.net.URL;
 
 class DrawPiece extends Piece  {
     
@@ -21,12 +13,8 @@ class DrawPiece extends Piece  {
     Graphics2D g2 = (Graphics2D) g;
     Image bking;
     
-  
-    
-
      bking = Toolkit.getDefaultToolkit().getImage("./PNGs/bking.png");
-    //drawImage(g,bking, Window.getX(row*xdelta), Window.getY(ydelta*column), this);
-    drawImage(g,thisObj,bking,Window.getX(row*xdelta)+38,Window.getYNormal(ydelta*column)+30,0.0,10.25,1.25 );
+    drawImage(g,thisObj,bking,Window.getX(row*xdelta)+38,Window.getYNormal(ydelta*column)+30,0.0,1.25,1.25 );
     }
  public void drawImage(Graphics2D g,Chess thisObj,Image image,int xpos,int ypos,double rot,double xscale,double yscale) {
         int width = image.getWidth(thisObj);

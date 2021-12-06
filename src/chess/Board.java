@@ -107,14 +107,14 @@ public class Board {
      
            
                 int column = xpixelOffset/xdelta;
-        int row = ypixelOffset/ydelta; 
+                 int row = ypixelOffset/ydelta;
 
         
        
       
        
            
-        board[row][column] = new DrawPiece(Color.blue );
+        board[column][row] = new DrawPiece(Color.blue );
 
             
         
@@ -157,22 +157,10 @@ public class Board {
               //   board[col][row] = null;    
                  
                  
-//if piece at bottom 
-        if(board[col][row] != null)
-        {
-            //keep looping while not at top and there is a piece to shuffle 
-            while(row >= 0 &&  board[col][row] != null)
-            {
-                //move piece down
-                board[col][row] = board[col][row-1];
-                        //move up 
-                        row --;
-            }
-            
-            //if at top remove 
+
         
-            board[col][0] = null;
-        }
+            board[col][row] = null;
+        
         
     }
     
@@ -188,106 +176,7 @@ public class Board {
      
              
     
-    /* 
-     private static boolean areConnected(){
-         
-       final  int numconnect = 4;
-        int _row = 0 ;
-        int wrow= 0;
-        int wcol = 0;
-       
-         Color currentColor = null;
-       //  final  int numconnect2 = 4;
-         //int _row = 0 ;
-       // int _col = 0;
-         Color currentColor2 = null;
-         
-        for (int zrow = 0; zrow<NUM_ROWS; zrow++){         
-        for (int zcol = 0; zcol<NUM_COLUMNS; zcol++){
-            
-            
-            if(board[zcol][zrow] == null)
-            {
-             _row = 0;
-             currentColor = null;
-            }
-            else if(board[zcol][zrow].getColor() == currentColor)
-            {
-                _row ++;
-                
-                if(_row == numconnect)
-                {
-                    highlight = new Highlight(wcol,wrow,numconnect,Highlight.Direction.right);
-                
-                    
-                    return true;
-                }
-                
-            }
-            else{
-                _row = 1;
-                wrow = zrow;
-                wcol = zcol;
-                currentColor = board[zcol][zrow].getColor();
-        }
-        
-    }
-          
-         _row = 0;
-         currentColor = null;
-          
-    }        
-                
-        for (int zcol = 0; zcol<NUM_COLUMNS; zcol++){
-            for (int zrow = 0; zrow<NUM_ROWS; zrow++){ 
-            
-            
-            if(board[zcol][zrow] == null)
-            {
-             _row = 0;
-             currentColor2 = null;
-            }
-            else if(board[zcol][zrow].getColor() == currentColor2)
-            {
-                _row ++;
-                if(_row == numconnect)
-                {
-                 highlight = new Highlight(zcol,zrow,numconnect,Highlight.Direction.down);
-           
-                    return true;
-                }
-                
-            }
-            else{
-                _row = 1;
-                currentColor2 = board[zcol][zrow].getColor();
-        }
-       
-    }
-          
-         
-            _row = 0;
-         currentColor2 = null;
-    }
-        /*
-        for (int zrow = 0; zrow<NUM_ROWS; zrow++){         
-        for (int zcol = 0; zcol<NUM_COLUMNS; zcol++){
-        for(int rowStart = 0; rowStart < NUM_ROWS-4;rowStart++){
-        int count = 0;
-        int row2, col;
-        for(row2 = rowStart,col = 0;row2<NUM_ROWS && col < NUM_COLUMNS; row2++, col++){
-            if(board[col][row2] == board[zcol][zrow])
-                
-            
-        }
-       
-            }}}
-
-        return false;
-     }
-*/
-
-
+  
 
     }              
   
