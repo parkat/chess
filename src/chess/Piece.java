@@ -16,8 +16,16 @@ public abstract class Piece {
     }
 
     public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta);
-      
+    
+    public abstract void Moves();
 
+    public static void Highlight(int type)
+    {
+       if(type == 2)
+       {
+           
+       }
+    }
     
     
     
