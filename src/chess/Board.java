@@ -84,15 +84,7 @@ public class Board {
         
        
          {
-             ///Player play = Player.getTurn();
-               //play.getColor();
-               //
-//             if(areConnected() == true){
-//                 
-//                 Player play = Player.getTurn();
-//                 play.setWinner(true);
-//                 return;
-//             }
+             
              
         Board yeet = new Board();
         int ydelta = Window.getHeight2()/NUM_ROWS;
@@ -104,35 +96,16 @@ public class Board {
             return;    
                 if(ypixelOffset < 0  || ypixelOffset > Window.getHeight2())
                 return;
-     
-           
-                int column = xpixelOffset/xdelta;
-      
-// add the detections for win 
                 
-                //find the correct row to place the piece.        
-        int row = NUM_ROWS-1;  //start at the bottom index.
-//while we are below the top and spot is not empty.        
-        while (row >= 0 && board[column][row] != null)
-        {
-            row--; //ove up to the next row.
-       }
-       if (row < 0)  //don't add a piece if column full
-            return; 
-       
-      
-       if (Player.getTurn() == Player.players[0] ) { 
-           
-        board[column][row] = new DrawPiece(Player.players[0].getColor() );
-            Player.SwitchTurn();
-            
-        
+                      int column = xpixelOffset/xdelta;
+                      int row = ypixelOffset/ydelta;
+        board[column][row] = new DrawPiece(Color.blue);
+     
         }
         
-       else  {
-            board[column][row] = new DrawPiece(Player.players[1].getColor());
+    
           
-            Player.SwitchTurn();
+         
        }
      
        
@@ -152,18 +125,13 @@ public class Board {
 //      
         
        
-            if(board[0][0] != null && board[1][0] != null&& board[2][0] != null&& board[3][0] != null&& board[4][0] != null&& board[5][0] != null&& board[6][0] != null&& board[7][0] != null ) //areConnected() == false)               
-            {
-                Player.players[1].setWinner(true);
-                 Player.players[0].setWinner(true);
-            }
-         }
+        
                 
 
        
       
          
-    }
+    
     public static void removePiece(int xpix, int ypix)
     {
         int ydelta = Window.getHeight2()/NUM_ROWS;
@@ -178,25 +146,14 @@ public class Board {
                 
                 int col = xpixelOffset/xdelta;
                 int row = ypixelOffset/ydelta;
-              //   board[col][row] = null;    
+              
                  
                  
-//if piece at bottom 
-        if(board[col][row] != null)
-        {
-            //keep looping while not at top and there is a piece to shuffle 
-            while(row >= 0 &&  board[col][row] != null)
-            {
-                //move piece down
-                board[col][row] = board[col][row-1];
-                        //move up 
-                        row --;
-            }
-            
-            //if at top remove 
+
+ 
         
-            board[col][0] = null;
-        }
+            board[col][row] = null;
+        
         
     }
     
