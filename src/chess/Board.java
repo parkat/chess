@@ -107,33 +107,20 @@ public class Board {
      
            
                 int column = xpixelOffset/xdelta;
-      
-// add the detections for win 
-                
-                //find the correct row to place the piece.        
-        int row = NUM_ROWS-1;  //start at the bottom index.
-//while we are below the top and spot is not empty.        
-        while (row >= 0 && board[column][row] != null)
-        {
-            row--; //ove up to the next row.
-       }
-       if (row < 0)  //don't add a piece if column full
-            return; 
+        int row = ypixelOffset/ydelta; 
+
+        
        
       
-       if (Player.getTurn() == Player.players[0] ) { 
+       
            
-        board[column][row] = new DrawPiece(Player.players[0].getColor() );
-            Player.SwitchTurn();
+        board[row][column] = new DrawPiece(Color.blue );
+
             
         
         }
         
-       else  {
-            board[column][row] = new DrawPiece(Player.players[1].getColor());
-          
-            Player.SwitchTurn();
-       }
+      
      
        
  // if  (yeet.areFourConnected(board[column][row],Player.players[1].getColor()))
@@ -150,17 +137,6 @@ public class Board {
 //                 return;
 //             }
 //      
-        
-       
-            if(board[0][0] != null && board[1][0] != null&& board[2][0] != null&& board[3][0] != null&& board[4][0] != null&& board[5][0] != null&& board[6][0] != null&& board[7][0] != null ) //areConnected() == false)               
-            {
-                Player.players[1].setWinner(true);
-                 Player.players[0].setWinner(true);
-            }
-         }
-                
-
-       
       
          
     }
@@ -306,6 +282,7 @@ public class Board {
         }
        
             }}}
+
         return false;
      }
 */
@@ -314,5 +291,6 @@ public class Board {
 
     }              
   
+
 
 
