@@ -30,7 +30,12 @@ public class Chess extends JFrame implements Runnable {
                 if (e.BUTTON1 == e.getButton() ) {
                     Board.addPiece(e.getX(),e.getY());
                     
-                  
+                    Piece.Highlight(Board.getPiece(e.getX(),e.getY()));
+                    
+                    
+                    //get which piece 
+                    //  put the get piece into call and  highlight  moves                   
+                    
                  //    Player.SwitchTurn();
                   //  System.out.println(e.getX()+" "+e.getY());
                     
@@ -119,11 +124,14 @@ public class Chess extends JFrame implements Runnable {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
-        chessboard = Toolkit.getDefaultToolkit().getImage("./PNGs/chessboard.jpg");
         
+        
+        
+        chessboard = Toolkit.getDefaultToolkit().getImage("./PNGs/chessboard.jpg");
         g.drawImage(chessboard,Window.getX(-75),Window.getY(-67),Window.getWidth2()+150,Window.getHeight2()+130,this);
 
                 
+        
         Board.Draw(g);
       /* 
        if(Player.players[1].winner == true)

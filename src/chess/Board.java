@@ -32,6 +32,7 @@ public class Board {
  // highlight.Draw(g, xdelta, ydelta);
 
  
+ ////////////////where the black lines are and here pieces would be placed
           highlight.Draw(g, xdelta, ydelta);
         g.setColor(Color.black);
         for (int zi = 1;zi<NUM_ROWS;zi++)
@@ -120,19 +121,14 @@ public class Board {
             return; 
        
       
-       if (Player.getTurn() == Player.players[0] ) { 
-           
-        board[column][row] = new OvalPiece(Player.players[0].getColor() );
+        if (Player.getTurn() == Player.players[0] ) {
+            board[column][row] = new OvalPiece(Player.players[0].getColor() );
             Player.SwitchTurn();
-            
-        
         }
-        
-       else  {
+        else  {
             board[column][row] = new OvalPiece(Player.players[1].getColor());
-          
             Player.SwitchTurn();
-       }
+        }
      
        
  // if  (yeet.areFourConnected(board[column][row],Player.players[1].getColor()))
@@ -157,12 +153,9 @@ public class Board {
                  Player.players[0].setWinner(true);
             }
          }
-                
-
-       
-      
-         
     }
+    
+    
     public static void removePiece(int xpix, int ypix)
     {
         int ydelta = Window.getHeight2()/NUM_ROWS;
@@ -200,6 +193,41 @@ public class Board {
     }
     
     
+    
+    public static int getPiece(int xpix, int ypix)
+    {
+        int piecetype = 0;
+        int ydelta = Window.getHeight2()/NUM_ROWS;
+        int xdelta = Window.getWidth2()/NUM_COLUMNS;
+        int xpixelOffset = xpix - Window.getX(0);
+        int ypixelOffset = ypix - Window.getY(0);
+     //    int num = (int)(Math.random()*2);
+         if(xpixelOffset < 0  || xpixelOffset > Window.getWidth2())               
+            return(0);    
+                if(ypixelOffset < 0  || ypixelOffset > Window.getHeight2())
+                return(0);   
+                
+                int col = xpixelOffset/xdelta;
+                int row = ypixelOffset/ydelta;
+              //   board[col][row] = null;    
+                 
+                 
+//if piece at bottom 
+        if(board[col][row] != null)
+        {
+            //keep looping while not at top and there is a piece to shuffle 
+            while(row >= 0 &&  board[col][row] != null)
+            {
+                //indentify the piece
+                //the identified piece set = piecetype
+                return(piecetype);
+            }
+        }
+        
+        return(0);
+    }
+    
+    
     public static int getRows()
     {
         return NUM_ROWS;
@@ -209,7 +237,9 @@ public class Board {
         return NUM_COLUMNS;
     }
      
-             
+     
+     
+     
     
      
      private static boolean areConnected(){

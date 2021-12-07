@@ -48,7 +48,7 @@ public class Player {
     public void setWinner(boolean y)
     {
         winner = y;
-        System.out.println("winner is set to "+y);
+//        System.out.println("winner is set to "+y);
     }
     
     
