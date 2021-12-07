@@ -106,15 +106,16 @@ public class Board {
                 return;
      
            
-                int column = xpixelOffset/xdelta;
-                 int row = ypixelOffset/ydelta;
+                int column = ypixelOffset/ydelta;
+                 int row = xpixelOffset/xdelta;
 
         
        
       
        
            
-        board[column][row] = new DrawPiece(Color.blue );
+        board[row][column] = new DrawPiece(Color.blue );
+        System.out.println(row);
 
             
         

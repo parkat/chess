@@ -14,7 +14,7 @@ class DrawPiece extends Piece  {
     Image bking;
     
      bking = Toolkit.getDefaultToolkit().getImage("./PNGs/bking.png");
-    drawImage(g,thisObj,bking,Window.getX(row*xdelta)+38,Window.getYNormal(ydelta*column)+30,0.0,1.25,1.25 );
+    drawImage(g,thisObj,bking,Window.getX(xdelta*row),Window.getYNormal(ydelta*column),0.0,1.25,1.25 );
     }
  public void drawImage(Graphics2D g,Chess thisObj,Image image,int xpos,int ypos,double rot,double xscale,double yscale) {
         int width = image.getWidth(thisObj);
