@@ -16,6 +16,10 @@ public class Pawn extends Piece {
    public void Moves()
    {
 
-        
    }
+   public void Highlight()
+   {
+       
+   }
+   
 }

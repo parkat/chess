@@ -1,5 +1,6 @@
 package chess;
 //hihihihih
+///qwertyuop
 
 import java.io.*;
 import java.awt.*;
@@ -28,11 +29,9 @@ public class Chess extends JFrame implements Runnable {
             public void mousePressed(MouseEvent e) {
 
                 if (e.BUTTON1 == e.getButton() ) {
-                    Board.addPiece(e.getX(),e.getY());
-                    
                     Piece.Highlight(Board.getPiece(e.getX(),e.getY()));
                     
-                    
+                    Board.addPiece(e.getX(),e.getY());
                     //get which piece 
                     //  put the get piece into call and  highlight  moves                   
                     

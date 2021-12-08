@@ -106,12 +106,12 @@ public class Board {
                 return;
      
            
-                int column = xpixelOffset/xdelta;
-      
+        int column = xpixelOffset/xdelta;
+        int row = ypixelOffset/ydelta;//start at the bottom index.
+
 // add the detections for win 
                 
                 //find the correct row to place the piece.        
-        int row = NUM_ROWS-1;  //start at the bottom index.
 //while we are below the top and spot is not empty.        
         while (row >= 0 && board[column][row] != null)
         {
@@ -122,11 +122,11 @@ public class Board {
        
       
         if (Player.getTurn() == Player.players[0] ) {
-            board[column][row] = new OvalPiece(Player.players[0].getColor() );
+            board[column][row] = new OvalPiece(Color.blue );
             Player.SwitchTurn();
         }
         else  {
-            board[column][row] = new OvalPiece(Player.players[1].getColor());
+            board[column][row] = new OvalPiece(Color.green) ;
             Player.SwitchTurn();
         }
      
