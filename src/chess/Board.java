@@ -194,18 +194,17 @@ public class Board {
     
     
     
-    public static int getPiece(int xpix, int ypix)
+    public static void getPiece(Graphics2D g,int xpix, int ypix)
     {
-        int piecetype = 0;
-        int ydelta = Window.getHeight2()/NUM_ROWS;
+         int ydelta = Window.getHeight2()/NUM_ROWS;
         int xdelta = Window.getWidth2()/NUM_COLUMNS;
         int xpixelOffset = xpix - Window.getX(0);
         int ypixelOffset = ypix - Window.getY(0);
      //    int num = (int)(Math.random()*2);
          if(xpixelOffset < 0  || xpixelOffset > Window.getWidth2())               
-            return(0);    
+            return;    
                 if(ypixelOffset < 0  || ypixelOffset > Window.getHeight2())
-                return(0);   
+                return;
                 
                 int col = xpixelOffset/xdelta;
                 int row = ypixelOffset/ydelta;
@@ -218,13 +217,46 @@ public class Board {
             //keep looping while not at top and there is a piece to shuffle 
             while(row >= 0 &&  board[col][row] != null)
             {
+                int identity = 0;
                 //indentify the piece
-                //the identified piece set = piecetype
-                return(piecetype);
+                if(identity == 1)
+                {
+                    //highlight white pawn
+                    highlight.Draw(g, xdelta, ydelta, identity);
+                }
+                else if(identity == 2)
+                {
+                    //highlight black pawn
+                    highlight.Draw(g, xdelta, ydelta, identity);
+                }
+                else if(identity == 3)
+                {
+                    //highlight king
+                    highlight.Draw(g, xdelta, ydelta, identity);
+                }
+                else if(identity == 4)
+                {
+                    //highlight queen
+                    highlight.Draw(g, xdelta, ydelta, identity);
+                }
+                else if(identity == 5)
+                {
+                    //highlight rook
+                    highlight.Draw(g, xdelta, ydelta, identity);
+                }
+                else if(identity == 6)
+                {
+                    //highlight bishop
+                    highlight.Draw(g, xdelta, ydelta, identity);
+                }
+                else if(identity == 7)
+                {
+                    //highlight knight
+                    highlight.Draw(g, xdelta, ydelta, identity);
+                }
+                return;
             }
         }
-        
-        return(0);
     }
     
     

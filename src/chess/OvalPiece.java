@@ -13,10 +13,4 @@ public class OvalPiece extends Piece{
        g.setColor(getColor());
        g.fillOval(Window.getX(row*xdelta),Window.getY(ydelta*column), xdelta, ydelta);
    }
-   public void Moves()
-   {
-       new Highlight();
-
-        
-   }
 }

@@ -13,13 +13,4 @@ public class Pawn extends Piece {
        g.setColor(getColor());
        g.fillRect(Window.getX(row*xdelta),Window.getY(ydelta*column), xdelta, ydelta);
    }
-   public void Moves()
-   {
-
-   }
-   public void Highlight()
-   {
-       
-   }
-   
 }

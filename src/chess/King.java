@@ -12,10 +12,5 @@ public class King extends Piece {
        g.setColor(getColor());
        g.fillArc(Window.getX(row*xdelta),Window.getY(ydelta*column), xdelta, ydelta,10,10);
    }
-   public void Moves()
-   {
-
-        
-   }
 
 }

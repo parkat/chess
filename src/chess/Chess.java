@@ -29,14 +29,15 @@ public class Chess extends JFrame implements Runnable {
             public void mousePressed(MouseEvent e) {
 
                 if (e.BUTTON1 == e.getButton() ) {
-                    Piece.Highlight(Board.getPiece(e.getX(),e.getY()));
+                    Board.getPiece(g,e.getX(),e.getY());
+                    
                     
                     Board.addPiece(e.getX(),e.getY());
                     //get which piece 
                     //  put the get piece into call and  highlight  moves                   
                     
                  //    Player.SwitchTurn();
-                  //  System.out.println(e.getX()+" "+e.getY());
+//                    System.out.println(e.getX()+" "+e.getY());
                     
                 }
 

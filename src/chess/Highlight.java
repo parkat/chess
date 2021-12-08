@@ -29,23 +29,75 @@ public class Highlight {
     }
     Highlight()
     {isHighlight = false;}
-
-                    public void Draw( Graphics2D g,int xdelta,int ydelta) {
-                        if(!isHighlight)
-                            return;
-                        g.setColor(Color.YELLOW);
-                        int zcol = column;
-                        int zrow = row;
-                        for (int i = 0; i<numBoxes;i++)    {     
+        
+    
+    public int getRows()
+    {
+        return (row);
+    }
+     public int getColumns()
+    {
+        return (column);
+    }
+    
+     public void Draw(Graphics2D g,int xdelta,int ydelta,int type)
+    {
+//        if(!isHighlight)
+//            return;
+        g.setColor(Color.YELLOW);
+        int zcol = column;
+        int zrow = row;
+//        for (int i = 0; i<numBoxes;i++)    {     
+//        g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
+//        if(direction == Direction.right)
+//            zrow++;
+//        else if(direction == Direction.down)
+//            zcol--;
+//        }
+        
+       if(type == 1)
+       {
+           //highlight pawn
            g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
+       }
+       else if(type == 2)
+       {
+           //highlight king
+           g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
+       }
+       else if(type == 3)
+       {
+           //highlight queen
+       }
+       else if(type == 4)
+       {
+           //highlight rook
+       }
+       else if(type == 5)
+       {
+           //highlight bishop
+       }
+       else if(type == 6)
+       {
+           //highlight knight
+       }
+    }
 
-           if(direction == Direction.right)
-               zrow++;
-           else if(direction == Direction.down)
-               zcol--;
-                        }
-
-                    }
+    
+    public void Draw(Graphics2D g,int xdelta,int ydelta) {
+        if(!isHighlight)
+            return;
+        g.setColor(Color.YELLOW);
+        int zcol = column;
+        int zrow = row;
+        for (int i = 0; i<numBoxes;i++)    {     
+        g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
+        if(direction == Direction.right)
+            zrow++;
+        else if(direction == Direction.down)
+            zcol--;
+        }
+    }
 
 
 
