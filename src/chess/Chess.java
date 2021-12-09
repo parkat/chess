@@ -12,6 +12,7 @@ public class Chess extends JFrame implements Runnable {
     boolean animateFirstTime = true;
     Image image;
     Graphics2D g;
+    public static boolean clickToggle;
 
     Image chessboard;
     
@@ -29,17 +30,24 @@ public class Chess extends JFrame implements Runnable {
 
                 if (e.BUTTON1 == e.getButton() ) {
                     
+                    
                   
                    
-                  // Board.movePiece(e.getX(),e.getY());
+                   //Board.movePiece(e.getX(),e.getY());
+                   
+            //    
+              //  if(Board.board2 != null)
+               //     clickToggle = !clickToggle;
                 
-                    Board.addPiece(e.getX(),e.getY());
+              //  if(clickToggle == true)
+                   Board.addPiece(e.getX(),e.getY());
+                
                     Board.board2 = null;
+               //   System.out.println(clickToggle);
                 }
 
                 if (e.BUTTON3 == e.getButton()) {
-                    
-                     Board.movePiece(e.getX(),e.getY());
+                      Board.movePiece(e.getX(),e.getY());
                  
                    
 

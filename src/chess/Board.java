@@ -109,7 +109,7 @@ public class Board {
        
           board[col][row] = null;   
        
-        System.out.println(board2);
+     //   System.out.println(board2);
                  
         
     }
