@@ -21,7 +21,10 @@ public abstract class Piece {
     public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta,Chess thisObj);
       
 
-    
+    public int getId()
+    {
+        return(id);
+    }
     
     
 }
