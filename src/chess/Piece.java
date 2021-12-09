@@ -4,17 +4,29 @@ package chess;
 import java.awt.*;
 
 public abstract class Piece {
-    
+   private Image image;
     private Color color;
-    Piece(Color _color)
+    private int id;
+    
+    Piece(int _id)
     {
-        color = _color;
+        id = _id;
+    
     }
     public Color getColor()
     {
         return (color);
     }
+    public int getid()
+    {
+        return (id);
+    }
+    public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta);  
     
-    public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta);
-       
+    public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta,Chess thisObj);
+      
+
+    
+    
+    
 }

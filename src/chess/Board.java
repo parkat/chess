@@ -4,9 +4,11 @@ import java.awt.*;
 
 public class Board {
     //private  static int winner;
+   public static  boolean clickMode;
     private final static int NUM_ROWS = 8;
     private final static int NUM_COLUMNS = 8;      
     public static Piece board[][] = new Piece[NUM_ROWS][NUM_COLUMNS];
+      public static Piece board2;
     private static Highlight highlight;
     
 
@@ -18,21 +20,25 @@ public class Board {
                 //points to null or instance of peice
                 board[zrow][zcol] = null;  
         Player.Reset();
+        board2 = null;
      highlight = null;
    highlight = new Highlight();
-  
+  clickMode = false;
+    int ydelta = Window.getHeight2()/NUM_ROWS;
+        int xdelta = Window.getWidth2()/NUM_COLUMNS;
+  setPiece(xdelta,ydelta);
        
     }
     
-    public static void Draw(Graphics2D g) {
+    public static void Draw(Graphics2D g,Chess thisObj) {
 //draw grid
     
         int ydelta = Window.getHeight2()/NUM_ROWS;
         int xdelta = Window.getWidth2()/NUM_COLUMNS;
  // highlight.Draw(g, xdelta, ydelta);
 
- 
- ////////////////where the black lines are and here pieces would be placed
+            
+            
           highlight.Draw(g, xdelta, ydelta);
         g.setColor(Color.black);
         for (int zi = 1;zi<NUM_ROWS;zi++)
@@ -51,7 +57,7 @@ public class Board {
             for (int zcol=0;zcol<NUM_COLUMNS;zcol++)        
             {
                 if (board[zrow][zcol] != null)
-                    board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta);
+                    board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta,thisObj);
             }
         }  
          if(Player.players[1].getWinner() == true&&Player.players[0].getWinner() == true)
@@ -79,6 +85,36 @@ public class Board {
     
     
     }
+     public static void movePiece(int xpix, int ypix)
+    {
+       
+        
+        int ydelta = Window.getHeight2()/NUM_ROWS;
+        int xdelta = Window.getWidth2()/NUM_COLUMNS;
+        int xpixelOffset = xpix - Window.getX(0);
+        int ypixelOffset = ypix - Window.getY(0);
+     //    int num = (int)(Math.random()*2);
+         if(xpixelOffset < 0  || xpixelOffset > Window.getWidth2())               
+            return;    
+                if(ypixelOffset < 0  || ypixelOffset > Window.getHeight2())
+                return;
+                
+                int col = xpixelOffset/xdelta;
+                int row = ypixelOffset/ydelta;
+              //   board[col][row] = null;   
+              
+        
+  
+        board2 =board[col][row];
+       
+          board[col][row] = null;   
+          
+          System.out.println(board2.getid());
+       
+     //   System.out.println(board2);
+                 
+        
+    }
     public static void addPiece(int xpix ,int ypix)
     {
         
@@ -87,12 +123,9 @@ public class Board {
              ///Player play = Player.getTurn();
                //play.getColor();
                //
-             if(areConnected() == true){
-                 
-                 Player play = Player.getTurn();
-                 play.setWinner(true);
-                 return;
-             }
+           
+        
+             
              
         Board yeet = new Board();
         int ydelta = Window.getHeight2()/NUM_ROWS;
@@ -106,158 +139,59 @@ public class Board {
                 return;
      
            
-        int column = xpixelOffset/xdelta;
-        int row = ypixelOffset/ydelta;//start at the bottom index.
+                int column = xpixelOffset/xdelta;
+      
 
-// add the detections for win 
                 
-                //find the correct row to place the piece.        
-//while we are below the top and spot is not empty.        
-        while (row >= 0 && board[column][row] != null)
-        {
-            row--; //ove up to the next row.
-       }
-       if (row < 0)  //don't add a piece if column full
-            return; 
-       
+          
+        int row = ypixelOffset/ydelta;
+        
       
-        if (Player.getTurn() == Player.players[0] ) {
-            board[column][row] = new OvalPiece(Color.blue );
-            Player.SwitchTurn();
+ 
+      board[column][row]  =  board2; 
+//  System.out.println(Pieces.getID());
+         }    
+    }
+     public static void setPiece(int xdelta,int ydelta)
+        {
+            //--white--
+             board[3][0] = new Pieces(11);
+             board[4][0] = new Pieces(15);
+             board[2][0] = new Pieces(12);
+             board[5][0] = new Pieces(12);
+             board[1][0] = new Pieces(13);
+             board[6][0] = new Pieces(13);
+             board[0][0] = new Pieces(16);
+             board[7][0] = new Pieces(16);
+             board[0][1] = new Pieces(14);
+             board[1][1] = new Pieces(14);
+             board[2][1] = new Pieces(14);
+             board[3][1] = new Pieces(14);
+             board[4][1] = new Pieces(14);
+             board[5][1] = new Pieces(14);
+             board[6][1] = new Pieces(14);
+             board[7][1] = new Pieces(14);
+             //--------------------------------------
+             //--black--
+             board[3][7] = new Pieces(1);
+             board[4][7] = new Pieces(5);
+             board[2][7] = new Pieces(2);
+             board[5][7] = new Pieces(2);
+             board[1][7] = new Pieces(3);
+             board[6][7] = new Pieces(3);
+             board[0][7] = new Pieces(6);
+             board[7][7] = new Pieces(6);
+             board[0][6] = new Pieces(4);
+             board[1][6] = new Pieces(4);
+             board[2][6] = new Pieces(4);
+             board[3][6] = new Pieces(4);
+             board[4][6] = new Pieces(4);
+             board[5][6] = new Pieces(4);
+             board[6][6] = new Pieces(4);
+             board[7][6] = new Pieces(4);
         }
-        else  {
-            board[column][row] = new OvalPiece(Color.green) ;
-            Player.SwitchTurn();
-        }
-     
-       
- // if  (yeet.areFourConnected(board[column][row],Player.players[1].getColor()))
-      //System.out.println("heyyy");
   
-    //   if(yeet.areFourConnected(board[column][row],Player.players[0].getColor()))
-         //  System.out.println("heyyy");
-       
-       
-      if(areConnected() == true){
-                 
-                 Player play = Player.getTurn();
-                 play.setWinner(true);
-                 return;
-             }
-      
-        
-       
-            if(board[0][0] != null && board[1][0] != null&& board[2][0] != null&& board[3][0] != null&& board[4][0] != null&& board[5][0] != null&& board[6][0] != null&& board[7][0] != null && areConnected() == false)               
-            {
-                Player.players[1].setWinner(true);
-                 Player.players[0].setWinner(true);
-            }
-         }
-    }
-    
-    
-    public static void removePiece(int xpix, int ypix)
-    {
-        int ydelta = Window.getHeight2()/NUM_ROWS;
-        int xdelta = Window.getWidth2()/NUM_COLUMNS;
-        int xpixelOffset = xpix - Window.getX(0);
-        int ypixelOffset = ypix - Window.getY(0);
-     //    int num = (int)(Math.random()*2);
-         if(xpixelOffset < 0  || xpixelOffset > Window.getWidth2())               
-            return;    
-                if(ypixelOffset < 0  || ypixelOffset > Window.getHeight2())
-                return;
-                
-                int col = xpixelOffset/xdelta;
-                int row = ypixelOffset/ydelta;
-              //   board[col][row] = null;    
-                 
-                 
-//if piece at bottom 
-        if(board[col][row] != null)
-        {
-            //keep looping while not at top and there is a piece to shuffle 
-            while(row >= 0 &&  board[col][row] != null)
-            {
-                //move piece down
-                board[col][row] = board[col][row-1];
-                        //move up 
-                        row --;
-            }
-            
-            //if at top remove 
-        
-            board[col][0] = null;
-        }
-        
-    }
-    
-    
-    
-    public static void getPiece(Graphics2D g,int xpix, int ypix)
-    {
-         int ydelta = Window.getHeight2()/NUM_ROWS;
-        int xdelta = Window.getWidth2()/NUM_COLUMNS;
-        int xpixelOffset = xpix - Window.getX(0);
-        int ypixelOffset = ypix - Window.getY(0);
-     //    int num = (int)(Math.random()*2);
-         if(xpixelOffset < 0  || xpixelOffset > Window.getWidth2())               
-            return;    
-                if(ypixelOffset < 0  || ypixelOffset > Window.getHeight2())
-                return;
-                
-                int col = xpixelOffset/xdelta;
-                int row = ypixelOffset/ydelta;
-              //   board[col][row] = null;    
-                 
-                 
-//if piece at bottom 
-        if(board[col][row] != null)
-        {
-            //keep looping while not at top and there is a piece to shuffle 
-            while(row >= 0 &&  board[col][row] != null)
-            {
-                int identity = 0;
-                //indentify the piece
-                if(identity == 1)
-                {
-                    //highlight white pawn
-                    highlight.Draw(g, xdelta, ydelta, identity);
-                }
-                else if(identity == 2)
-                {
-                    //highlight black pawn
-                    highlight.Draw(g, xdelta, ydelta, identity);
-                }
-                else if(identity == 3)
-                {
-                    //highlight king
-                    highlight.Draw(g, xdelta, ydelta, identity);
-                }
-                else if(identity == 4)
-                {
-                    //highlight queen
-                    highlight.Draw(g, xdelta, ydelta, identity);
-                }
-                else if(identity == 5)
-                {
-                    //highlight rook
-                    highlight.Draw(g, xdelta, ydelta, identity);
-                }
-                else if(identity == 6)
-                {
-                    //highlight bishop
-                    highlight.Draw(g, xdelta, ydelta, identity);
-                }
-                else if(identity == 7)
-                {
-                    //highlight knight
-                    highlight.Draw(g, xdelta, ydelta, identity);
-                }
-                return;
-            }
-        }
-    }
+   
     
     
     public static int getRows()
@@ -269,113 +203,10 @@ public class Board {
         return NUM_COLUMNS;
     }
      
-     
-     
-     
+             
     
      
-     private static boolean areConnected(){
-         
-       final  int numconnect = 4;
-        int _row = 0 ;
-        int wrow= 0;
-        int wcol = 0;
-       
-         Color currentColor = null;
-       //  final  int numconnect2 = 4;
-         //int _row = 0 ;
-       // int _col = 0;
-         Color currentColor2 = null;
-         
-        for (int zrow = 0; zrow<NUM_ROWS; zrow++){         
-        for (int zcol = 0; zcol<NUM_COLUMNS; zcol++){
-            
-            
-            if(board[zcol][zrow] == null)
-            {
-             _row = 0;
-             currentColor = null;
-            }
-            else if(board[zcol][zrow].getColor() == currentColor)
-            {
-                _row ++;
-                
-                if(_row == numconnect)
-                {
-                    highlight = new Highlight(wcol,wrow,numconnect,Highlight.Direction.right);
-                
-                    
-                    return true;
-                }
-                
-            }
-            else{
-                _row = 1;
-                wrow = zrow;
-                wcol = zcol;
-                currentColor = board[zcol][zrow].getColor();
-        }
-        
-    }
-          
-         _row = 0;
-         currentColor = null;
-          
-    }        
-                
-        for (int zcol = 0; zcol<NUM_COLUMNS; zcol++){
-            for (int zrow = 0; zrow<NUM_ROWS; zrow++){ 
-            
-            
-            if(board[zcol][zrow] == null)
-            {
-             _row = 0;
-             currentColor2 = null;
-            }
-            else if(board[zcol][zrow].getColor() == currentColor2)
-            {
-                _row ++;
-                if(_row == numconnect)
-                {
-                 highlight = new Highlight(zcol,zrow,numconnect,Highlight.Direction.down);
-           
-                    return true;
-                }
-                
-            }
-            else{
-                _row = 1;
-                currentColor2 = board[zcol][zrow].getColor();
-        }
-       
-    }
-          
-         
-            _row = 0;
-         currentColor2 = null;
-    }
-        /*
-        for (int zrow = 0; zrow<NUM_ROWS; zrow++){         
-        for (int zcol = 0; zcol<NUM_COLUMNS; zcol++){
-        for(int rowStart = 0; rowStart < NUM_ROWS-4;rowStart++){
-        int count = 0;
-        int row2, col;
-        for(row2 = rowStart,col = 0;row2<NUM_ROWS && col < NUM_COLUMNS; row2++, col++){
-            if(board[col][row2] == board[zcol][zrow])
-                
-            
-        }
-       
-            }}}
-*/
-        return false;
-     }
-
-
+     
 
 
     }              
-  
-
-
-

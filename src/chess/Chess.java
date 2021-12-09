@@ -1,6 +1,5 @@
 package chess;
 //hihihihih
-///qwertyuop
 
 import java.io.*;
 import java.awt.*;
@@ -13,6 +12,7 @@ public class Chess extends JFrame implements Runnable {
     boolean animateFirstTime = true;
     Image image;
     Graphics2D g;
+    public static boolean clickToggle;
 
     Image chessboard;
     
@@ -28,23 +28,34 @@ public class Chess extends JFrame implements Runnable {
         addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
 
-                if (e.BUTTON1 == e.getButton() ) {
-                    Board.getPiece(g,e.getX(),e.getY());
+                if (e.BUTTON3 == e.getButton() ) {
                     
                     
-                    Board.addPiece(e.getX(),e.getY());
-                    //get which piece 
-                    //  put the get piece into call and  highlight  moves                   
-                    
-                 //    Player.SwitchTurn();
-//                    System.out.println(e.getX()+" "+e.getY());
-                    
+                  
+                   
+                   //Board.movePiece(e.getX(),e.getY());
+                   
+            //    
+              //  if(Board.board2 != null)
+               //     clickToggle = !clickToggle;
+                
+              //  if(clickToggle == true)
+                   Board.addPiece(e.getX(),e.getY());
+                
+                    Board.board2 = null;
+               //   System.out.println(clickToggle);
                 }
 
-                if (e.BUTTON3 == e.getButton()) {
+                if (e.BUTTON1 == e.getButton()) {
+                      Board.movePiece(e.getX(),e.getY());
+                 
+                   
+
+                }
+                   if (e.BUTTON2 == e.getButton()) {
                     
-                    
-                      Board.removePiece(e.getX(),e.getY());
+                     
+                 Board.Reset();
                    
 
                 }
@@ -62,7 +73,9 @@ public class Chess extends JFrame implements Runnable {
 
     addMouseMotionListener(new MouseMotionAdapter() {
       public void mouseMoved(MouseEvent e) {
-
+          
+         //   Board.movePiece(e.getX(),e.getY());
+           
         repaint();
       }
     });
@@ -124,15 +137,12 @@ public class Chess extends JFrame implements Runnable {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
-        
-        
-        
         chessboard = Toolkit.getDefaultToolkit().getImage("./PNGs/chessboard.jpg");
+        
         g.drawImage(chessboard,Window.getX(-75),Window.getY(-67),Window.getWidth2()+150,Window.getHeight2()+130,this);
 
                 
-        
-        Board.Draw(g);
+        Board.Draw(g,this);
       /* 
        if(Player.players[1].winner == true)
          Board.win1(g);
@@ -197,7 +207,3 @@ public class Chess extends JFrame implements Runnable {
     }
 
 }
-
- 
-
- 

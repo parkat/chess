@@ -58,7 +58,7 @@ public class Highlight {
        if(type == 1)
        {
            //highlight pawn
-           g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
+           g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), 100, 100);
        }
        else if(type == 2)
        {
@@ -67,7 +67,7 @@ public class Highlight {
        }
        else if(type == 3)
        {
-           //highlight queen
+           //highlight queen  
        }
        else if(type == 4)
        {
