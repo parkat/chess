@@ -1,4 +1,5 @@
 package chess;
+//hihihihih
 
 import java.io.*;
 import java.awt.*;
@@ -12,7 +13,10 @@ public class Chess extends JFrame implements Runnable {
     Image image;
     Graphics2D g;
 
+    Image chessboard;
+    
     public static void main(String[] args) {
+     
         Chess frame = new Chess();
         frame.setSize(Window.WINDOW_WIDTH, Window.WINDOW_HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,7 +29,8 @@ public class Chess extends JFrame implements Runnable {
 
                 if (e.BUTTON1 == e.getButton() ) {
                     Board.addPiece(e.getX(),e.getY());
-                    
+                     Board.movePiece(e.getX(),e.getY());
+                   
                   
                  //    Player.SwitchTurn();
                   //  System.out.println(e.getX()+" "+e.getY());
@@ -35,7 +40,7 @@ public class Chess extends JFrame implements Runnable {
                 if (e.BUTTON3 == e.getButton()) {
                     
                     
-                      Board.removePiece(e.getX(),e.getY());
+                 
                    
 
                 }
@@ -53,7 +58,9 @@ public class Chess extends JFrame implements Runnable {
 
     addMouseMotionListener(new MouseMotionAdapter() {
       public void mouseMoved(MouseEvent e) {
-
+          
+         //   Board.movePiece(e.getX(),e.getY());
+           
         repaint();
       }
     });
@@ -95,26 +102,31 @@ public class Chess extends JFrame implements Runnable {
         }
 //fill background
         
-        g.setColor(Color.black);
-        g.fillRect(0, 0, Window.xsize, Window.ysize);
-
-        int x[] = {Window.getX(0), Window.getX(Window.getWidth2()), Window.getX(Window.getWidth2()), Window.getX(0), Window.getX(0)};
-        int y[] = {Window.getY(0), Window.getY(0), Window.getY(Window.getHeight2()), Window.getY(Window.getHeight2()), Window.getY(0)};
-//fill border
-        g.setColor(Color.GRAY);
-        g.fillPolygon(x, y, 4);
-// draw border
-        g.setColor(Color.BLUE);
-        g.drawPolyline(x, y, 5);
-        
+//            g.drawImage(chessboard,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
+//        
+//        g.setColor(Color.black);
+//        g.fillRect(0, 0, Window.xsize, Window.ysize);
+//
+//        int x[] = {Window.getX(0), Window.getX(Window.getWidth2()), Window.getX(Window.getWidth2()), Window.getX(0), Window.getX(0)};
+//        int y[] = {Window.getY(0), Window.getY(0), Window.getY(Window.getHeight2()), Window.getY(Window.getHeight2()), Window.getY(0)};
+////fill border
+//        g.setColor(Color.GRAY);
+//        g.fillPolygon(x, y, 4);
+//// draw border
+//        g.setColor(Color.BLUE);
+//        g.drawPolyline(x, y, 5);
+//        
     //    g.dr
 
         if (animateFirstTime) {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
+        chessboard = Toolkit.getDefaultToolkit().getImage("./PNGs/chessboard.jpg");
         
-              
+        g.drawImage(chessboard,Window.getX(-75),Window.getY(-67),Window.getWidth2()+150,Window.getHeight2()+130,this);
+
+                
         Board.Draw(g,this);
       /* 
        if(Player.players[1].winner == true)
@@ -145,6 +157,7 @@ public class Chess extends JFrame implements Runnable {
 /////////////////////////////////////////////////////////////////////////
     public void reset() {
         Board.Reset();
+        chessboard = Toolkit.getDefaultToolkit().getImage("./chessboard.jpg");
     }
 /////////////////////////////////////////////////////////////////////////
     public void animate() {
@@ -155,7 +168,7 @@ public class Chess extends JFrame implements Runnable {
                 Window.xsize = getSize().width;
                 Window.ysize = getSize().height;
             }
-
+            chessboard = Toolkit.getDefaultToolkit().getImage("./chessboard.jpg");
             reset();
 
         }

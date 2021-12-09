@@ -4,11 +4,14 @@ package chess;
 import java.awt.*;
 
 public abstract class Piece {
-    
+   private Image image;
     private Color color;
-    Piece(Color _color)
+    private int id;
+    
+    Piece(int _id)
     {
-        color = _color;
+        id = _id;
+    
     }
     public Color getColor()
     {
