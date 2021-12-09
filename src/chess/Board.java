@@ -8,6 +8,7 @@ public class Board {
     private final static int NUM_ROWS = 8;
     private final static int NUM_COLUMNS = 8;      
     public static Piece board[][] = new Piece[NUM_ROWS][NUM_COLUMNS];
+      public static Piece board2;
     private static Highlight highlight;
     
 
@@ -19,9 +20,13 @@ public class Board {
                 //points to null or instance of peice
                 board[zrow][zcol] = null;  
         Player.Reset();
+        board2 = null;
      highlight = null;
    highlight = new Highlight();
   clickMode = false;
+    int ydelta = Window.getHeight2()/NUM_ROWS;
+        int xdelta = Window.getWidth2()/NUM_COLUMNS;
+  setPiece(xdelta,ydelta);
        
     }
     
@@ -32,7 +37,7 @@ public class Board {
         int xdelta = Window.getWidth2()/NUM_COLUMNS;
  // highlight.Draw(g, xdelta, ydelta);
 
-            setPiece(xdelta,ydelta);
+            
             
           highlight.Draw(g, xdelta, ydelta);
         g.setColor(Color.black);
@@ -80,6 +85,34 @@ public class Board {
     
     
     }
+     public static void movePiece(int xpix, int ypix)
+    {
+       
+        
+        int ydelta = Window.getHeight2()/NUM_ROWS;
+        int xdelta = Window.getWidth2()/NUM_COLUMNS;
+        int xpixelOffset = xpix - Window.getX(0);
+        int ypixelOffset = ypix - Window.getY(0);
+     //    int num = (int)(Math.random()*2);
+         if(xpixelOffset < 0  || xpixelOffset > Window.getWidth2())               
+            return;    
+                if(ypixelOffset < 0  || ypixelOffset > Window.getHeight2())
+                return;
+                
+                int col = xpixelOffset/xdelta;
+                int row = ypixelOffset/ydelta;
+              //   board[col][row] = null;   
+              
+        
+  
+        board2 =board[col][row];
+       
+          board[col][row] = null;   
+       
+        System.out.println(board2);
+                 
+        
+    }
     public static void addPiece(int xpix ,int ypix)
     {
         
@@ -113,7 +146,7 @@ public class Board {
         
       
  
-        board[column][row] = new Pieces(16);
+      board[column][row]  =  board2; 
   
          }    
     }
@@ -156,32 +189,7 @@ public class Board {
              board[7][6] = new Pieces(4);
         }
   
-    public static void movePiece(int xpix, int ypix)
-    {
-       
-        
-        int ydelta = Window.getHeight2()/NUM_ROWS;
-        int xdelta = Window.getWidth2()/NUM_COLUMNS;
-        int xpixelOffset = xpix - Window.getX(0);
-        int ypixelOffset = ypix - Window.getY(0);
-     //    int num = (int)(Math.random()*2);
-         if(xpixelOffset < 0  || xpixelOffset > Window.getWidth2())               
-            return;    
-                if(ypixelOffset < 0  || ypixelOffset > Window.getHeight2())
-                return;
-                
-                int col = xpixelOffset/xdelta;
-                int row = ypixelOffset/ydelta;
-              //   board[col][row] = null;   
-              
-        Piece board2 = null;
-        if(clickMode == true)
-        board2 =board[col][row];
-       
-        System.out.println(board2);
-                 
-        
-    }
+   
     
     
     public static int getRows()
