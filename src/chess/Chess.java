@@ -40,6 +40,7 @@ public class Chess extends JFrame implements Runnable {
                //     clickToggle = !clickToggle;
                 
               //  if(clickToggle == true)
+              if (Board.board2 !=null)
                    Board.addPiece(e.getX(),e.getY());
                 
                     Board.board2 = null;
