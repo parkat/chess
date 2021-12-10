@@ -30,7 +30,7 @@ public class Chess extends JFrame implements Runnable {
 
                 if (e.BUTTON3 == e.getButton() ) {
                     
-                    
+                     Board.addPiece(g,e.getX(),e.getY());
                   
                    
                    //Board.movePiece(e.getX(),e.getY());
@@ -40,14 +40,15 @@ public class Chess extends JFrame implements Runnable {
                //     clickToggle = !clickToggle;
                 
               //  if(clickToggle == true)
-                   Board.addPiece(e.getX(),e.getY());
+                  
                 
                     Board.board2 = null;
                //   System.out.println(clickToggle);
                 }
 
                 if (e.BUTTON1 == e.getButton()) {
-                      Board.movePiece(e.getX(),e.getY());
+                    
+                      Board.movePiece(g,e.getX(),e.getY());
                  
                    
 

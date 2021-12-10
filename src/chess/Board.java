@@ -4,11 +4,11 @@ import java.awt.*;
 
 public class Board {
     //private  static int winner;
-   public static  boolean clickMode;
+    public static  boolean clickMode;
     private final static int NUM_ROWS = 8;
     private final static int NUM_COLUMNS = 8;      
     public static Piece board[][] = new Piece[NUM_ROWS][NUM_COLUMNS];
-      public static Piece board2;
+    public static Piece board2;
     private static Highlight highlight;
     
 
@@ -21,9 +21,9 @@ public class Board {
                 board[zrow][zcol] = null;  
         Player.Reset();
         board2 = null;
-     highlight = null;
-   highlight = new Highlight();
-  clickMode = false;
+        highlight = null;
+        highlight = new Highlight();
+        clickMode = false;
     int ydelta = Window.getHeight2()/NUM_ROWS;
         int xdelta = Window.getWidth2()/NUM_COLUMNS;
   setPiece(xdelta,ydelta);
@@ -85,7 +85,7 @@ public class Board {
     
     
     }
-     public static void movePiece(int xpix, int ypix)
+     public static void movePiece(Graphics2D g,int xpix, int ypix)
     {
        
         
@@ -106,16 +106,21 @@ public class Board {
         
   
         board2 =board[col][row];
-       
-          board[col][row] = null;   
+        System.out.println(col);
+        System.out.println(row);
+        
+       highlight.Draw(g,xdelta,ydelta,board2.getid());
+        
+        board[col][row] = null;   
           
-          System.out.println(board2.getid());
+//          System.out.println(board2.getid());
+          
        
      //   System.out.println(board2);
                  
         
     }
-    public static void addPiece(int xpix ,int ypix)
+    public static void addPiece(Graphics2D g,int xpix ,int ypix)
     {
         
        
@@ -149,6 +154,7 @@ public class Board {
       
  
       board[column][row]  =  board2; 
+//        highlight.Draw(g,column,row,board2.getid());
 //  System.out.println(Pieces.getID());
          }    
     }

@@ -45,6 +45,7 @@ public class Highlight {
 //        if(!isHighlight)
 //            return;
         g.setColor(Color.YELLOW);
+        
         int zcol = column;
         int zrow = row;
 //        for (int i = 0; i<numBoxes;i++)    {     
@@ -55,31 +56,41 @@ public class Highlight {
 //            zcol--;
 //        }
         
-       if(type == 1)
-       {
-           //highlight pawn
-           g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), 100, 100);
-       }
-       else if(type == 2)
+       if(type == 1 || type == 11)
        {
            //highlight king
+           System.out.println("hi");
            g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
        }
-       else if(type == 3)
+       else if(type == 2 || type == 12)
        {
-           //highlight queen  
+           //highlight bishop
+           g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
+       }
+       else if(type == 3 || type == 13)
+       {
+           //highlight knight  
+           g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
        }
        else if(type == 4)
        {
+           //highlight black pawn
+           g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
+       }
+       else if(type == 14)
+       {
+           //highlight white pawn
+           g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
+       }
+       else if(type == 5 || type == 15)
+       {
+           //highlight queen
+           g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
+       }
+       else if(type == 6 || type == 16)
+       {
            //highlight rook
-       }
-       else if(type == 5)
-       {
-           //highlight bishop
-       }
-       else if(type == 6)
-       {
-           //highlight knight
+           g.fillRect(Window.getX(zrow*xdelta),Window.getY(ydelta*zcol), xdelta, ydelta);
        }
     }
 
