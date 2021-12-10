@@ -1,5 +1,6 @@
 package chess;
-//hihihihih
+//hihihihih\
+//qwertyuiop
 
 import java.io.*;
 import java.awt.*;
