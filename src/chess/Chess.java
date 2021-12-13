@@ -12,19 +12,24 @@ public class Chess extends JFrame implements Runnable {
     boolean animateFirstTime = true;
     Image image;
     Graphics2D g;
-    public static boolean clickToggle;
+     public static Chess frame = new Chess();
+    public static boolean yes = true;
 
     Image chessboard;
     
     public static void main(String[] args) {
      
-        Chess frame = new Chess();
+     //  Chess frame = new Chess();
         frame.setSize(Window.WINDOW_WIDTH, Window.WINDOW_HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+                Menu a = new Menu(yes);
+
     }
 
     public Chess() {
+        
+        setTitle("Chess | By Parker and Jared");
         addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
 
@@ -143,15 +148,9 @@ public class Chess extends JFrame implements Runnable {
         g.drawImage(chessboard,Window.getX(-75),Window.getY(-67),Window.getWidth2()+150,Window.getHeight2()+130,this);
 
                 
-        Board.Draw(g,this);
-      /* 
-       if(Player.players[1].winner == true)
-         Board.win1(g);
-     else if(Player.players[1].winner == true)
-          Board.win2(g);
-     else if (Player.players[1].winner == true && Player.players[0].winner == true)
-         Board.stalemate(g);
-         */
+            Board.Draw(g,this);
+            Menu.Draw(g);
+            
         gOld.drawImage(image, 0, 0, null);
     }
 

@@ -104,12 +104,14 @@ public class Board {
               //   board[col][row] = null;   
               
         
-  
+  if(board[col][row] != null)
+  {
         board2 =board[col][row];
        
           board[col][row] = null;   
        
           board2.getId();
+  }
      //   System.out.println(board2);
                  
         
