@@ -10,6 +10,7 @@ public class Board {
     public static Piece board[][] = new Piece[NUM_ROWS][NUM_COLUMNS];
     public static Piece board2;
     private static Highlight highlight;
+    public static int type;
     
 
     public static void Reset() {
@@ -105,11 +106,14 @@ public class Board {
               
         
   
-        board2 =board[col][row];
-        System.out.println(col);
-        System.out.println(row);
+        board2 = board[col][row];
+//        System.out.println(col);
+//        System.out.println(row);
         
-       highlight.Draw(g,xdelta,ydelta,board2.getid());
+        type = board2.getid();
+//        System.out.println(xdelta);
+//        System.out.println(ydelta);
+        highlight.Draw(g,row,col,xdelta,ydelta,board2.getid());
         
         board[col][row] = null;   
           

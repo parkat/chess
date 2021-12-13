@@ -23,6 +23,9 @@ public class Player {
        color = _color;
         
     }
+        public static Player GetCurrentTurn() {
+        return (currentTurn);
+    }
     
     public Color getColor()
     {

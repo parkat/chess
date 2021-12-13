@@ -145,6 +145,7 @@ public class Chess extends JFrame implements Runnable {
 
                 
         Board.Draw(g,this);
+        Highlight.Draw(g, ERROR, ERROR, WIDTH, WIDTH, 0);
       /* 
        if(Player.players[1].winner == true)
          Board.win1(g);

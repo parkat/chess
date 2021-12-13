@@ -109,8 +109,52 @@ public class Highlight {
             zcol--;
         }
     }
+    
+    
+    public static void Draw(Graphics2D g,int row,int col,int xdelta,int ydelta,int type)
+    {
+            System.out.println(row);
+            g.setColor(Color.YELLOW);
+            type = Board.type;
+            if(type == 0)
+            {
 
-
+            }
+            else if(type == 1 || type == 11)
+            {
+                g.fillRect(row*5, col*5, 75, 67);
+            }
+            else if(type == 2 || type == 12)
+            {
+                //highlight bishop
+                g.fillRect(row*5, col*5, 75, 67);
+             }
+            else if(type == 3 || type == 13)
+            {
+                //highlight knight  
+                g.fillRect(row*5, col*5, 75, 67);
+            }
+            else if(type == 4)
+            {
+                //highlight black pawn
+                g.fillRect(row*5, col*5, 75, 67);
+            }
+            else if(type == 14)
+            {
+                //highlight white pawn
+                g.fillRect(row*5, col*5, 75, 67);
+            }
+            else if(type == 5 || type == 15)
+            {
+                //highlight queen
+                g.fillRect(row*5, col*5, 75, 67);
+            }
+            else if(type == 6 || type == 16)
+            {
+                //highlight rook
+                g.fillRect(row*5, col*5, 75, 67);
+            }
+    }
 
 }
 
