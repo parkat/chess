@@ -59,8 +59,11 @@ public class Highlight {
     }
         public static void Draw(Graphics2D g,int row,int col,int xdelta,int ydelta,int type)
     {
+            System.out.println(row);
             g.setColor(Color.YELLOW);
             type = Board.type;
+//             g.fillRect(row*xdelta, col*ydelta, 75, 67);
+            
             if(type == 0)
             {
                 
@@ -79,7 +82,7 @@ public class Highlight {
                 //highlight knight  
                 System.out.println(row);
 //                System.out.println(col);
-                g.fillRect(row*5, col*5 , 75, 67);
+                g.fillRect(row*1, col*1 , 75, 67);
             }
             else if(type == 4)
             {
