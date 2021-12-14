@@ -6,27 +6,27 @@ import javax.swing.*;
 
 public class Menu extends JFrame{
     public static boolean show = false;
-     JFrame f = new JFrame("New Frame");
+     //JFrame f = new JFrame("New Frame");
     Menu(boolean _show)
     {
         
-         f.setSize(390, 300);
+    //     f.setSize(390, 300);
          
-      JButton b = new JButton("Submit");
-b.setBounds(50, 150, 100, 30);
+//JButton b = new JButton("Submit");
+////b.setBounds(50, 150, 100, 30);
 //add button to the frame
-f.add(b);
+//f.add(b);
         
         show = _show;
      
          
-         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+         //setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //setVisible(true);
     }
     
     public static void Draw(Graphics2D g)
     {
-        if(show == !true){
+        if(show == true){
             g.setColor(Color.BLACK);
             g.fillRect(0, 0, 800, 800);
             g.setColor(Color.DARK_GRAY);
@@ -35,16 +35,7 @@ f.add(b);
               g.setColor(Color.WHITE);
         g.setFont (new Font ("OCR A",Font.BOLD, 30));                  
             g.drawString("Menu", 285, 150);
-            
-//              g.setColor(Color.WHITE);
-//        g.setFont (new Font ("OCR A",Font.BOLD, 10));                  
-//            g.drawString("help :\n" +
-//"1) click with left mouse button to select a piece\n" +
-//"2)click with right mouse button to place the piece\n" +
-//"3) some pieces move differently be aware of this\n" +
-//"| pawns can move and take backwards\n" +
-//"| Knights can move in a big L (2x2) along with the normal L shape\n" +
-//"| every two turns the king can move like a queen", 285, 250);
+
 
  g.setColor(Color.WHITE);
         g.setFont (new Font ("OCR A",Font.BOLD, 15));                  
@@ -74,7 +65,23 @@ f.add(b);
             g.setColor(Color.WHITE);
         g.setFont (new Font ("OCR A",Font.BOLD, 15));                  
             g.drawString("      | every two turns the king can move like a queen", 85, 320);
+            
+            
+        
         }
     }
-    
+    public static void button(Graphics2D g,int x, int y)
+    {
+       
+        if( y >= 500 && y<=530&&x >= 280 && x<=380){
+         g.setColor(Color.WHITE); 
+
+        }
+        else
+        {
+   g.setColor(Color.BLUE); 
+ 
+        }
+        g.fillRect(280,500, 100, 30);
+    }
 }

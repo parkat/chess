@@ -81,8 +81,9 @@ public class Chess extends JFrame implements Runnable {
     addMouseMotionListener(new MouseMotionAdapter() {
       public void mouseMoved(MouseEvent e) {
           
-         //   Board.movePiece(e.getX(),e.getY());
-           
+                Menu.button(g, e.getX(), e.getY());
+     
+           System.out.println("xpos = " + e.getX()+"   "+" ypos = "+ e.getY());
         repaint();
       }
     });
@@ -151,6 +152,8 @@ public class Chess extends JFrame implements Runnable {
                 
             Board.Draw(g,this);
             Menu.Draw(g);
+             Menu.button(g,100, 100);
+            
             
         gOld.drawImage(image, 0, 0, null);
     }
