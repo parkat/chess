@@ -113,7 +113,10 @@ public class Board {
         type = board2.getid();
 //        System.out.println(xdelta);
 //        System.out.println(ydelta);
-        highlight.Draw(g,row,col,xdelta,ydelta,board2.getid());
+        for (int i=0;i<=1;i++)
+        {
+            highlight.Draw(g,row,col,xdelta,ydelta,board2.getid());
+        }
         
         board[col][row] = null;   
           

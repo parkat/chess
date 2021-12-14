@@ -51,7 +51,6 @@ public class Chess extends JFrame implements Runnable {
                     
                       Board.movePiece(g,e.getX(),e.getY());
                  
-                   
 
                 }
                    if (e.BUTTON2 == e.getButton()) {
@@ -145,7 +144,7 @@ public class Chess extends JFrame implements Runnable {
 
                 
         Board.Draw(g,this);
-        Highlight.Draw(g, ERROR, ERROR, WIDTH, WIDTH, 0);
+        Highlight.Draw(g, ERROR, ERROR, WIDTH, WIDTH, Board.type);
       /* 
        if(Player.players[1].winner == true)
          Board.win1(g);
