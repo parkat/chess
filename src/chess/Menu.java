@@ -8,7 +8,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Menu extends JFrame{
-    public static boolean show = true;
+    public static boolean show = false;
     JButton button = new JButton("Click here!");
      
         JPanel panel = new JPanel();
