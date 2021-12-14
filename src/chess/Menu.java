@@ -1,32 +1,32 @@
 
 package chess;
 
-import java.io.*;
 import java.awt.*;
-import java.awt.geom.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 public class Menu extends JFrame{
     public static boolean show = false;
-    JButton button = new JButton("Click here!");
-     
-        JPanel panel = new JPanel();
+     JFrame f = new JFrame("New Frame");
     Menu(boolean _show)
     {
-        JButton button = new JButton("Click here!");
-        button.setBounds(50,100,100,50);
+        
+         f.setSize(390, 300);
+         
+      JButton b = new JButton("Submit");
+b.setBounds(50, 150, 100, 30);
+//add button to the frame
+f.add(b);
         
         show = _show;
-         Chess.frame.add(button);
+     
          
          setDefaultCloseOperation(EXIT_ON_CLOSE);
-         setVisible(true);
+        setVisible(true);
     }
     
     public static void Draw(Graphics2D g)
     {
-        if(show == true){
+        if(show == !true){
             g.setColor(Color.BLACK);
             g.fillRect(0, 0, 800, 800);
             g.setColor(Color.DARK_GRAY);

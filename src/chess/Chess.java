@@ -13,6 +13,7 @@ public class Chess extends JFrame implements Runnable {
     Image image;
     Graphics2D g;
      public static Chess frame = new Chess();
+     
     public static boolean yes = true;
 
     Image chessboard;
