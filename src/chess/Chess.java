@@ -12,6 +12,7 @@ public class Chess extends JFrame implements Runnable {
     boolean animateFirstTime = true;
     Image image;
     Graphics2D g;
+ 
      public static Chess frame = new Chess();
    public static  JButton button;
      //button = new JButton(“Click Me!”);
