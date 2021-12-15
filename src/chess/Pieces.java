@@ -16,34 +16,36 @@ class Pieces extends Piece  {
     setPiece();                                          
     }
     
-   private void setPiece()
-   {
-       if(id == 1)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bking.png"); 
-       else if(id == 11)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wking.png"); 
+    private void setPiece()
+    {
+        if(id == 1)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bking.png"); 
+        else if(id == 11)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wking.png"); 
         else if(id == 2)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bbishop.png"); 
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bbishop.png"); 
         else if(id == 12)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wbishop.png"); 
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wbishop.png"); 
         else if(id == 3)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bknight.png"); 
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bknight.png"); 
         else  if(id == 13)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wknight.png"); 
-         else  if(id == 4)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bpawn.png"); 
-         else   if(id == 14)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wpawn.png"); 
-         else   if(id == 5)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bqueen.png"); 
-         else   if(id == 15)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wqueen.png"); 
-         else   if(id == 6)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/brook.png"); 
-          else  if(id == 16)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wrook.png"); 
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wknight.png"); 
+        else if(id == 4)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bpawn.png"); 
+        else if(id == 14)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wpawn.png"); 
+        else if(id == 5)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bqueen.png"); 
+        else if(id == 15)
+             img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wqueen.png"); 
+        else if(id == 6)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/brook.png"); 
+        else  if(id == 16)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wrook.png"); 
+        else if(id == 10)
+             img = Toolkit.getDefaultToolkit().getImage("./PNGs/bluedot.png"); 
            
-   }
+    }
     
     
    public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta)   

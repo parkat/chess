@@ -9,6 +9,7 @@ public class Board {
     private final static int NUM_COLUMNS = 8;      
     public static Piece board[][] = new Piece[NUM_ROWS][NUM_COLUMNS];
     public static Piece board2;
+    public static Piece board3[][] = new Piece[NUM_ROWS][NUM_COLUMNS];
     private static Highlight highlight;
     public static int type;
     
@@ -18,13 +19,18 @@ public class Board {
       // winner = 0;
         for (int zrow=0;zrow<NUM_ROWS;zrow++)
             for (int zcol=0;zcol<NUM_COLUMNS;zcol++)
+            {
                 //points to null or instance of peice
                 board[zrow][zcol] = null;  
+                board3[zrow][zcol] = null;
+            }
         Player.Reset();
         board2 = null;
         highlight = null;
         highlight = new Highlight();
         clickMode = false;
+        type = 0;
+        
     int ydelta = Window.getHeight2()/NUM_ROWS;
         int xdelta = Window.getWidth2()/NUM_COLUMNS;
   setPiece(xdelta,ydelta);
@@ -59,6 +65,8 @@ public class Board {
             {
                 if (board[zrow][zcol] != null)
                     board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta,thisObj);
+                if (board3[zrow][zcol] != null)
+                    board3[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta,thisObj);
             }
         }  
          if(Player.players[1].getWinner() == true&&Player.players[0].getWinner() == true)
@@ -113,10 +121,7 @@ public class Board {
         type = board2.getid();
 //        System.out.println(xdelta);
 //        System.out.println(ydelta);
-        for (int i=0;i<=1;i++)
-        {
             highlight.Draw(g,row,col,xdelta,ydelta,board2.getid());
-        }
         
         board[col][row] = null;   
           

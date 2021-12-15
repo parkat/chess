@@ -9,26 +9,25 @@ import java.awt.*;
 import java.awt.Color;
 
 
-public class Highlight {
+public class Highlight extends Piece{
     public static enum Direction {right,down};
     private int row;
     private int column;
     private Direction direction;
+    
 
     private boolean isHighlight = true;
     private int numBoxes;
 
-    Highlight(int _row,int _column,int num,Direction d)
+    Highlight(int _id)
     {
-       row = _row;
-       column = _column;
-
-       direction = d;
-       numBoxes = num;
-
+        super(_id);
     }
     Highlight()
-    {isHighlight = false;}
+    {
+        isHighlight = false;
+    }
+    
         
     
     public int getRows()
@@ -58,11 +57,12 @@ public class Highlight {
         }
     }
         public static void Draw(Graphics2D g,int row,int col,int xdelta,int ydelta,int type)
-    {
-            System.out.println(row);
+        {
+//            System.out.println(xdelta);
             g.setColor(Color.YELLOW);
             type = Board.type;
-//             g.fillRect(row*xdelta, col*ydelta, 75, 67);
+//            Board.board3[4][4] = new Pieces(10);
+//             g.fillRect(105, 140, 75, 67);
             
             if(type == 0)
             {
@@ -70,42 +70,54 @@ public class Highlight {
             }
             else if(type == 1 || type == 11)
             {
-                g.fillRect(row*xdelta, col*ydelta, 75, 67);
+                //highlight king
+                Board.board3[col][row-1] = new Pieces(10);
+                Board.board3[col-1][row-1] = new Pieces(10);
+                Board.board3[col+1][row-1] = new Pieces(10);
+                Board.board3[col+1][row] = new Pieces(10);
+                Board.board3[col-1][row] = new Pieces(10);
             }
             else if(type == 2 || type == 12)
             {
                 //highlight bishop
-                g.fillRect(100,100, 75, 67);
-             }
+                
+            }
             else if(type == 3 || type == 13)
             {
                 //highlight knight  
-                System.out.println(row);
-//                System.out.println(col);
-                g.fillRect(row*1, col*1 , 75, 67);
+                
             }
             else if(type == 4)
             {
                 //highlight black pawn
                 
-                g.fillRect(10*row, 100, 75, 67);
             }
             else if(type == 14)
             {
                 //highlight white pawn
-                g.fillRect(row*5, col*5, 75, 67);
+                
             }
             else if(type == 5 || type == 15)
             {
                 //highlight queen
-                g.fillRect(row*5, col*5, 75, 67);
+                
             }
             else if(type == 6 || type == 16)
             {
                 //highlight rook
-                g.fillRect(row*5, col*5, 75, 67);
+                
             }
+            Board.type = 0;
             
+    }
+        
+    public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta)
+    {
+        
+    }
+    public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta,Chess thisObj)
+    {
+        
     }
 
 }
