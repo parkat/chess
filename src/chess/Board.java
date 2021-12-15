@@ -15,6 +15,7 @@ public class Board {
     public static void Reset() {
 //clear the board.
       // winner = 0;
+      Menu.show = true;
         for (int zrow=0;zrow<NUM_ROWS;zrow++)
             for (int zcol=0;zcol<NUM_COLUMNS;zcol++)
                 //points to null or instance of peice

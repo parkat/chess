@@ -13,6 +13,9 @@ public class Chess extends JFrame implements Runnable {
     Image image;
     Graphics2D g;
      public static Chess frame = new Chess();
+   public static  JButton button;
+     //button = new JButton(“Click Me!”);
+    
      
     public static boolean yes = true;
 
@@ -20,7 +23,11 @@ public class Chess extends JFrame implements Runnable {
     
     public static void main(String[] args) {
      
+        
+      button = new JButton("hello");
      //  Chess frame = new Chess();
+     frame.setLayout(new FlowLayout());
+     
         frame.setSize(Window.WINDOW_WIDTH, Window.WINDOW_HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -35,17 +42,9 @@ public class Chess extends JFrame implements Runnable {
             public void mousePressed(MouseEvent e) {
 
                 if (e.BUTTON1 == e.getButton() ) {
-                    
-                    
-                  
-                   
-                   //Board.movePiece(e.getX(),e.getY());
-                   
-            //    
-              //  if(Board.board2 != null)
-               //     clickToggle = !clickToggle;
-                
+              
               //  if(clickToggle == true)
+               Menu.buttonClick(e.getX(), e.getY());
               if (Board.board2 !=null)
                    Board.addPiece(e.getX(),e.getY());
                 
@@ -56,7 +55,7 @@ public class Chess extends JFrame implements Runnable {
                 if (e.BUTTON3 == e.getButton()) {
                       Board.movePiece(e.getX(),e.getY());
                  
-                   
+                  
 
                 }
                    if (e.BUTTON2 == e.getButton()) {
@@ -81,9 +80,9 @@ public class Chess extends JFrame implements Runnable {
     addMouseMotionListener(new MouseMotionAdapter() {
       public void mouseMoved(MouseEvent e) {
           
-                Menu.button(g, e.getX(), e.getY());
-     
-           System.out.println("xpos = " + e.getX()+"   "+" ypos = "+ e.getY());
+                Menu.mous(g, e.getX(), e.getY());
+  
+      //     System.out.println("xpos = " + e.getX()+"   "+" ypos = "+ e.getY());
         repaint();
       }
     });
@@ -152,10 +151,13 @@ public class Chess extends JFrame implements Runnable {
                 
             Board.Draw(g,this);
             Menu.Draw(g);
-             Menu.button(g,100, 100);
+            Menu.button(g);
             
-            
+            button = new JButton("hello");
+     frame.setLayout(new FlowLayout());
+            frame.add(button);
         gOld.drawImage(image, 0, 0, null);
+        
     }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -176,6 +178,7 @@ public class Chess extends JFrame implements Runnable {
 /////////////////////////////////////////////////////////////////////////
     public void reset() {
         Board.Reset();
+        Menu.show = true;
         chessboard = Toolkit.getDefaultToolkit().getImage("./chessboard.jpg");
     }
 /////////////////////////////////////////////////////////////////////////

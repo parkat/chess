@@ -5,19 +5,20 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Menu extends JFrame{
-    public static boolean show = false;
+    public static boolean show = true;
+    private static boolean color;
      //JFrame f = new JFrame("New Frame");
     Menu(boolean _show)
     {
         
     //     f.setSize(390, 300);
-         
+       show = true;  
 //JButton b = new JButton("Submit");
 ////b.setBounds(50, 150, 100, 30);
 //add button to the frame
 //f.add(b);
         
-        show = _show;
+     
      
          
          //setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -26,7 +27,8 @@ public class Menu extends JFrame{
     
     public static void Draw(Graphics2D g)
     {
-        if(show == true){
+       
+        if(show != false){
             g.setColor(Color.BLACK);
             g.fillRect(0, 0, 800, 800);
             g.setColor(Color.DARK_GRAY);
@@ -70,18 +72,44 @@ public class Menu extends JFrame{
         
         }
     }
-    public static void button(Graphics2D g,int x, int y)
+    public static void mous(Graphics2D g,int x, int y)
     {
-       
-        if( y >= 500 && y<=530&&x >= 280 && x<=380){
-         g.setColor(Color.WHITE); 
+        
+          if( y >= 400 && y<=430&&x >= 280 && x<=380){
+        color = true;
 
         }
         else
         {
-   g.setColor(Color.BLUE); 
+   color = false;
  
         }
-        g.fillRect(280,500, 100, 30);
+    }
+    public static void button(Graphics2D g)
+    {
+        if(show != false){
+        if (color == true ){
+              g.setColor(Color.WHITE);
+        g.fillRect(280,400, 100, 30);
+        
+        g.setColor(Color.BLACK);
+        g.setFont (new Font ("OCR A",Font.BOLD, 30));                  
+            g.drawString("OK", 306, 420+5);
+        }
+           if (color == false ){
+              g.setColor(Color.BLUE);
+        g.fillRect(280,400, 100, 30);
+        g.setColor(Color.BLACK);
+        g.setFont (new Font ("OCR A",Font.BOLD, 30));                  
+            g.drawString("OK", 306, 420+5);
+         }
+     }
+}
+    public static void buttonClick(int x, int y)
+    {
+            if( y >= 400 && y<=430&&x >= 280 && x<=380){
+        show = false;
+            }
+       System.out.println(show);
     }
 }
