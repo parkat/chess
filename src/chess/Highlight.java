@@ -71,11 +71,22 @@ public class Highlight extends Piece{
             else if(type == 1 || type == 11)
             {
                 //highlight king
-                Board.board3[col][row-1] = new Pieces(10);
-                Board.board3[col-1][row-1] = new Pieces(10);
-                Board.board3[col+1][row-1] = new Pieces(10);
-                Board.board3[col+1][row] = new Pieces(10);
-                Board.board3[col-1][row] = new Pieces(10);
+                if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
+                    Board.board3[col][row-1] = new Pieces(10);
+                if(row >= 1 && row < 6 && col >= 1 && col <= 6)
+                    Board.board3[col-1][row-1] = new Pieces(10);
+                if(row >= 1 && row < 6 && col >= 1 && col <= 6)    
+                    Board.board3[col+1][row-1] = new Pieces(10);
+                if(row >= 1 && row < 6 && col >= 1 && col <= 6)    
+                    Board.board3[col+1][row] = new Pieces(10);
+                if(row >= 1 && row < 6 && col >= 1 && col <= 6)    
+                    Board.board3[col-1][row] = new Pieces(10);
+                if(row >= 1 && row < 6 && col >= 1 && col <= 6)
+                    Board.board3[col+1][row+1] = new Pieces(10);
+                if(row >= 1 && row < 6 && col >= 1 && col <= 6)
+                    Board.board3[col][row+1] = new Pieces(10);
+                if(row >= 1 && row < 6 && col >= 1 && col <= 6)
+                    Board.board3[col-1][row+1] = new Pieces(10);
             }
             else if(type == 2 || type == 12)
             {
@@ -84,7 +95,15 @@ public class Highlight extends Piece{
             }
             else if(type == 3 || type == 13)
             {
-                //highlight knight  
+                //highlight knight 
+                if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
+                    Board.board3[col+2][row+2] = new Pieces(10);
+                if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
+                     Board.board3[col+2][row-2] = new Pieces(10);;
+                if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
+                     Board.board3[col-2][row-2] = new Pieces(10);
+                if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
+                     Board.board3[col-2][row+2] = new Pieces(10);
                 
             }
             else if(type == 4)
