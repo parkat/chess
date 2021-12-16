@@ -15,6 +15,7 @@ public class Board {
     public static void Reset() {
 //clear the board.
       // winner = 0;
+      Chess.kitty = false;
       Menu.show = true;
         for (int zrow=0;zrow<NUM_ROWS;zrow++)
             for (int zcol=0;zcol<NUM_COLUMNS;zcol++)
@@ -119,16 +120,8 @@ public class Board {
     }
     public static void addPiece(int xpix ,int ypix)
     {
-        
-       
          {
-             ///Player play = Player.getTurn();
-               //play.getColor();
-               //
            
-        
-             
-             
         Board yeet = new Board();
         int ydelta = Window.getHeight2()/NUM_ROWS;
         int xdelta = Window.getWidth2()/NUM_COLUMNS;
@@ -204,12 +197,6 @@ public class Board {
     {
         return NUM_COLUMNS;
     }
-     
-             
-    
-     
-     
-
 
     }              
   

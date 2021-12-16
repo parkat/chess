@@ -7,22 +7,9 @@ import javax.swing.*;
 public class Menu extends JFrame{
     public static boolean show = true;
     private static boolean color;
-     //JFrame f = new JFrame("New Frame");
     Menu(boolean _show)
     {
-        
-    //     f.setSize(390, 300);
        show = true;  
-//JButton b = new JButton("Submit");
-////b.setBounds(50, 150, 100, 30);
-//add button to the frame
-//f.add(b);
-        
-     
-     
-         
-         //setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //setVisible(true);
     }
     
     public static void Draw(Graphics2D g)
@@ -68,7 +55,9 @@ public class Menu extends JFrame{
         g.setFont (new Font ("OCR A",Font.BOLD, 15));                  
             g.drawString("      | every two turns the king can move like a queen", 85, 320);
             
-            
+             g.setColor(Color.WHITE);
+        g.setFont (new Font ("OCR A",Font.BOLD, 15));                  
+            g.drawString("  Press [Enter] to bring back this screen", 200, 380);
         
         }
     }
@@ -92,14 +81,14 @@ public class Menu extends JFrame{
               g.setColor(Color.WHITE);
         g.fillRect(280,400, 100, 30);
         
-        g.setColor(Color.BLACK);
+        g.setColor(Color.BLUE);
         g.setFont (new Font ("OCR A",Font.BOLD, 30));                  
             g.drawString("OK", 306, 420+5);
         }
            if (color == false ){
               g.setColor(Color.BLUE);
         g.fillRect(280,400, 100, 30);
-        g.setColor(Color.BLACK);
+        g.setColor(Color.WHITE);
         g.setFont (new Font ("OCR A",Font.BOLD, 30));                  
             g.drawString("OK", 306, 420+5);
          }

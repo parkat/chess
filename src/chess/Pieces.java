@@ -79,5 +79,3 @@ public int getid()
 return(id);
 }
 }
-//  board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta, thisObj );
-//   outerSpaceImage = Toolkit.getDefaultToolkit().getImage("./outerSpace.jpg"); 

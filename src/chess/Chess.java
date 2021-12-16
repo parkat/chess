@@ -12,15 +12,13 @@ public class Chess extends JFrame implements Runnable {
     boolean animateFirstTime = true;
     Image image;
     Graphics2D g;
- 
+ public static boolean kitty; 
      public static Chess frame = new Chess();
    public static  JButton button;
-     //button = new JButton(“Click Me!”);
-    
-     
     public static boolean yes = true;
 
     Image chessboard;
+    Image kitten;
     
     public static void main(String[] args) {
      
@@ -44,13 +42,13 @@ public class Chess extends JFrame implements Runnable {
 
                 if (e.BUTTON1 == e.getButton() ) {
               
-              //  if(clickToggle == true)
+           
                Menu.buttonClick(e.getX(), e.getY());
               if (Board.board2 !=null)
                    Board.addPiece(e.getX(),e.getY());
                 
                     Board.board2 = null;
-               //   System.out.println(clickToggle);
+              
                 }
 
                 if (e.BUTTON3 == e.getButton()) {
@@ -63,7 +61,7 @@ public class Chess extends JFrame implements Runnable {
                     
                      
                  Board.Reset();
-                   
+                  
 
                 }
                 repaint();
@@ -94,7 +92,13 @@ public class Chess extends JFrame implements Runnable {
                 if (e.VK_UP == e.getKeyCode()) {
                 } else if (e.VK_DOWN == e.getKeyCode()) {
                 } else if (e.VK_LEFT == e.getKeyCode()) {
-                } else if (e.VK_RIGHT == e.getKeyCode()) {
+                    
+                 kitty = true;
+                    
+                } else if (e.VK_ENTER == e.getKeyCode()) {
+                    
+                    Menu.show = true;
+                    
                 } else if (e.VK_ESCAPE == e.getKeyCode()) {
                     Board.Reset();
                     reset();
@@ -123,23 +127,6 @@ public class Chess extends JFrame implements Runnable {
             g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                     RenderingHints.VALUE_ANTIALIAS_ON);
         }
-//fill background
-        
-//            g.drawImage(chessboard,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
-//        
-//        g.setColor(Color.black);
-//        g.fillRect(0, 0, Window.xsize, Window.ysize);
-//
-//        int x[] = {Window.getX(0), Window.getX(Window.getWidth2()), Window.getX(Window.getWidth2()), Window.getX(0), Window.getX(0)};
-//        int y[] = {Window.getY(0), Window.getY(0), Window.getY(Window.getHeight2()), Window.getY(Window.getHeight2()), Window.getY(0)};
-////fill border
-//        g.setColor(Color.GRAY);
-//        g.fillPolygon(x, y, 4);
-//// draw border
-//        g.setColor(Color.BLUE);
-//        g.drawPolyline(x, y, 5);
-//        
-    //    g.dr
 
         if (animateFirstTime) {
             gOld.drawImage(image, 0, 0, null);
@@ -149,11 +136,17 @@ public class Chess extends JFrame implements Runnable {
         
         g.drawImage(chessboard,Window.getX(-75),Window.getY(-67),Window.getWidth2()+150,Window.getHeight2()+130,this);
 
+        
+      
                 
             Board.Draw(g,this);
             Menu.Draw(g);
             Menu.button(g);
             
+              if(kitty == true){
+        kitten = Toolkit.getDefaultToolkit().getImage("./PNGs/Cat.GIF");
+        g.drawImage(kitten,200,200,350,130,this);
+        }
             button = new JButton("hello");
      frame.setLayout(new FlowLayout());
             frame.add(button);
