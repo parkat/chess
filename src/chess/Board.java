@@ -21,7 +21,7 @@ public class Board {
             for (int zcol=0;zcol<NUM_COLUMNS;zcol++)
                 //points to null or instance of peice
                 board[zrow][zcol] = null;  
-        Player.Reset();
+       
         board2 = null;
      highlight = null;
    highlight = new Highlight();
@@ -62,29 +62,7 @@ public class Board {
                     board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta,thisObj);
             }
         }  
-         if(Player.players[1].getWinner() == true&&Player.players[0].getWinner() == true)
-      {
-           g.setColor(Color.yellow);
-            g.setFont(new Font("Arial",Font.PLAIN,75));
-            g.drawString("DRAW!",Window.WINDOW_WIDTH/3,400);      
-    
-      }
-        
-    else  if(Player.players[0].getWinner() == true)
-      {
-           g.setColor(Color.orange);
-            g.setFont(new Font("Arial",Font.PLAIN,75));
-            g.drawString("PLAYER 1 WINS",35,Window.WINDOW_HEIGHT/2);      
-    
-      }
-    else  if(Player.players[1].getWinner() == true)
-      {
-           g.setColor(Color.black);
-            g.setFont(new Font("Arial",Font.PLAIN,75));
-            g.drawString("PLAYER 2 WINS",35,Window.WINDOW_HEIGHT/2);      
-    
-      }
-    
+       
     
     }
      public static void movePiece(int xpix, int ypix)
