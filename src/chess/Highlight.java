@@ -68,29 +68,50 @@ public class Highlight extends Piece{
             {
                 
             }
-            else if(type == 1 || type == 11)
+            else if(type == 1)
             {
                 //highlight king
-                if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
+                if(row >= 0 && row <= 7 && col >= 1 && col < 7)
                     Board.board3[col][row-1] = new Pieces(10);
-                if(row >= 1 && row < 6 && col >= 1 && col <= 6)
+                if(row >= 0 && row <= 7 && col >= 1 && col < 7)
                     Board.board3[col-1][row-1] = new Pieces(10);
-                if(row >= 1 && row < 6 && col >= 1 && col <= 6)    
+                if(row >= 0 && row <= 7 && col >= 1 && col < 7)    
                     Board.board3[col+1][row-1] = new Pieces(10);
-                if(row >= 1 && row < 6 && col >= 1 && col <= 6)    
+                if(row >= 0 && row <= 7 && col >= 1 && col < 7)    
                     Board.board3[col+1][row] = new Pieces(10);
-                if(row >= 1 && row < 6 && col >= 1 && col <= 6)    
+                if(row >= 0 && row <= 7 && col >= 1 && col < 7)    
                     Board.board3[col-1][row] = new Pieces(10);
-                if(row >= 1 && row < 6 && col >= 1 && col <= 6)
+                if(row >= 0 && row < 7 && col >= 1 && col < 7)
                     Board.board3[col+1][row+1] = new Pieces(10);
-                if(row >= 1 && row < 6 && col >= 1 && col <= 6)
+                if(row >= 0 && row < 7 && col >= 1 && col < 7)
                     Board.board3[col][row+1] = new Pieces(10);
-                if(row >= 1 && row < 6 && col >= 1 && col <= 6)
+                if(row >= 0 && row < 7 && col >= 1 && col < 7)
+                    Board.board3[col-1][row+1] = new Pieces(10);
+            }
+            else if(type == 11)
+            {
+                //highlight king
+                if(row > 0 && row < 7 && col >= 1 && col < 7)
+                    Board.board3[col][row-1] = new Pieces(10);
+                if(row > 0 && row < 7 && col >= 1 && col < 7)
+                    Board.board3[col-1][row-1] = new Pieces(10);
+                if(row > 0 && row < 7 && col >= 1 && col < 7)    
+                    Board.board3[col+1][row-1] = new Pieces(10);
+                if(row >= 0 && row < 7 && col >= 1 && col < 7)    
+                    Board.board3[col+1][row] = new Pieces(10);
+                if(row >= 0 && row < 7 && col >= 1 && col < 7)    
+                    Board.board3[col-1][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 1 && col < 7)
+                    Board.board3[col+1][row+1] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 1 && col < 7)
+                    Board.board3[col][row+1] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 1 && col < 7)
                     Board.board3[col-1][row+1] = new Pieces(10);
             }
             else if(type == 2 || type == 12)
             {
                 //highlight bishop
+                
                 
             }
             else if(type == 3 || type == 13)
@@ -99,7 +120,7 @@ public class Highlight extends Piece{
                 if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
                     Board.board3[col+2][row+2] = new Pieces(10);
                 if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
-                     Board.board3[col+2][row-2] = new Pieces(10);;
+                     Board.board3[col+2][row-2] = new Pieces(10);
                 if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
                      Board.board3[col-2][row-2] = new Pieces(10);
                 if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
@@ -109,12 +130,18 @@ public class Highlight extends Piece{
             else if(type == 4)
             {
                 //highlight black pawn
-                
+                if(row >= 1)
+                    Board.board3[col][row-1] = new Pieces(10);
+                if(row >= 2)
+                    Board.board3[col][row-2] = new Pieces(10);
             }
             else if(type == 14)
             {
                 //highlight white pawn
-                
+                if(row <= 6)
+                    Board.board3[col][row+1] = new Pieces(10);
+                if(row <= 5)
+                    Board.board3[col][row+2] = new Pieces(10);
             }
             else if(type == 5 || type == 15)
             {
