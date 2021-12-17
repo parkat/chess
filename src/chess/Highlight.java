@@ -111,7 +111,65 @@ public class Highlight extends Piece{
             else if(type == 2 || type == 12)
             {
                 //highlight bishop
+                if(row-1 >= 0 && row <= 7 && col-1 >= 0 && col <= 7)
+                    Board.board3[col-1][row-1] = new Pieces(10);
+                if(row-2 >= 0 && row <= 7 && col-2 >= 0 && col <= 7)
+                    Board.board3[col-2][row-2] = new Pieces(10);
+                if(row-3 >= 0 && row <= 7 && col-3 >= 0 && col <= 7)
+                    Board.board3[col-3][row-3] = new Pieces(10);
+                if(row-4 >= 0 && row <= 7 && col-4 >= 0 && col <= 7)
+                    Board.board3[col-4][row-4] = new Pieces(10);
+                if(row-5 >= 0 && row <= 7 && col-5 >= 0 && col <= 7)
+                    Board.board3[col-5][row-5] = new Pieces(10);
+                if(row-6 >= 0 && row <= 7 && col-6 >= 0 && col <= 7)
+                    Board.board3[col-6][row-6] = new Pieces(10);
+                if(row-7 >= 0 && row <= 7 && col-7 >= 0 && col <= 7)
+                    Board.board3[col-7][row-7] = new Pieces(10);
                 
+                if(row >= 0 && row+1 <= 7 && col-1 >= 0 && col <= 7)
+                    Board.board3[col-1][row+1] = new Pieces(10);
+                if(row >= 0 && row+2 <= 7 && col-2 >= 0 && col <= 7)
+                    Board.board3[col-2][row+2] = new Pieces(10);
+                if(row >= 0 && row+3 <= 7 && col-3 >= 0 && col <= 7)
+                    Board.board3[col-3][row+3] = new Pieces(10);
+                if(row >= 0 && row+4 <= 7 && col-4 >= 0 && col <= 7)
+                    Board.board3[col-4][row+4] = new Pieces(10);
+                if(row >= 0 && row+5 <= 7 && col-5 >= 0 && col <= 7)
+                    Board.board3[col-5][row+5] = new Pieces(10);
+                if(row >= 0 && row+6 <= 7 && col-6 >= 0 && col <= 7)
+                    Board.board3[col-6][row+6] = new Pieces(10);
+                if(row >= 0 && row+7 <= 7 && col-7 >= 0 && col <= 7)
+                    Board.board3[col-7][row+7] = new Pieces(10);
+                
+                if(row >= 0 && row+1 <= 7 && col >= 0 && col+1 <= 7)
+                    Board.board3[col+1][row+1] = new Pieces(10);
+                if(row >= 0 && row+2 <= 7 && col >= 0 && col+2 <= 7)
+                    Board.board3[col+2][row+2] = new Pieces(10);
+                if(row >= 0 && row+3 <= 7 && col >= 0 && col+3 <= 7)
+                    Board.board3[col+3][row+3] = new Pieces(10);
+                if(row >= 0 && row+4 <= 7 && col >= 0 && col+4 <= 7)
+                    Board.board3[col+4][row+4] = new Pieces(10);
+                if(row >= 0 && row+5 <= 7 && col >= 0 && col+5 <= 7)
+                    Board.board3[col+5][row+5] = new Pieces(10);
+                if(row >= 0 && row+6 <= 7 && col >= 0 && col+6 <= 7)
+                    Board.board3[col+6][row+6] = new Pieces(10);
+                if(row >= 0 && row+7 <= 7 && col >= 0 && col+7 <= 7)
+                    Board.board3[col+7][row+7] = new Pieces(10);
+                
+                if(row-1 >= 0 && row <= 7 && col >= 0 && col+1 <= 7)
+                    Board.board3[col+1][row-1] = new Pieces(10);
+                if(row-2 >= 0 && row <= 7 && col >= 0 && col+2 <= 7)
+                    Board.board3[col+2][row-2] = new Pieces(10);
+                if(row-3 >= 0 && row <= 7 && col >= 0 && col+3 <= 7)
+                    Board.board3[col+3][row-3] = new Pieces(10);
+                if(row-4 >= 0 && row <= 7 && col >= 0 && col+4 <= 7)
+                    Board.board3[col+4][row-4] = new Pieces(10);
+                if(row-5 >= 0 && row <= 7 && col >= 0 && col+5 <= 7)
+                    Board.board3[col+5][row-5] = new Pieces(10);
+                if(row-6 >= 0 && row <= 7 && col >= 0 && col+6 <= 7)
+                    Board.board3[col+6][row-6] = new Pieces(10);
+                if(row-7 >= 0 && row <= 7 && col >= 0 && col+7 <= 7)
+                    Board.board3[col+7][row-7] = new Pieces(10);
             }
             else if(type == 3 || type == 13)
             {
@@ -146,6 +204,125 @@ public class Highlight extends Piece{
             {
                 //highlight queen
                 
+                if(row-1 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-1] = new Pieces(10);
+                if(row-2 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-2] = new Pieces(10);
+                if(row-3 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-3] = new Pieces(10);
+                if(row-4 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-4] = new Pieces(10);
+                if(row-5 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-5] = new Pieces(10);
+                if(row-6 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-6] = new Pieces(10);
+                if(row-7 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-7] = new Pieces(10);
+                
+                if(row >= 0 && row+1 <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+1] = new Pieces(10);
+                if(row >= 0 && row+2 <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+2] = new Pieces(10);
+                if(row >= 0 && row+3 <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+3] = new Pieces(10);
+                if(row >= 0 && row+4 <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+4] = new Pieces(10);
+                if(row >= 0 && row+5 <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+5] = new Pieces(10);
+                if(row >= 0 && row+6 <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+6] = new Pieces(10);
+                if(row >= 0 && row+7 <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+7] = new Pieces(10);
+                
+                if(row >= 0 && row <= 7 && col-1 >= 0 && col <= 7)    
+                    Board.board3[col-1][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-2 >= 0 && col <= 7)    
+                    Board.board3[col-2][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-3 >= 0 && col <= 7)    
+                    Board.board3[col-3][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-4 >= 0 && col <= 7)    
+                    Board.board3[col-4][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-5 >= 0 && col <= 7)    
+                    Board.board3[col-5][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-6 >= 0 && col <= 7)    
+                    Board.board3[col-6][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-7 >= 0 && col <= 7)    
+                    Board.board3[col-7][row] = new Pieces(10);
+                
+                if(row >= 0 && row <= 7 && col >= 0 && col+1 <= 7)    
+                    Board.board3[col+1][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+2 <= 7)    
+                    Board.board3[col+2][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+3 <= 7)    
+                    Board.board3[col+3][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+4 <= 7)    
+                    Board.board3[col+4][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+5 <= 7)    
+                    Board.board3[col+5][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+6 <= 7)    
+                    Board.board3[col+6][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+7 <= 7)    
+                    Board.board3[col+7][row] = new Pieces(10);
+                
+                if(row-1 >= 0 && row <= 7 && col-1 >= 0 && col <= 7)
+                    Board.board3[col-1][row-1] = new Pieces(10);
+                if(row-2 >= 0 && row <= 7 && col-2 >= 0 && col <= 7)
+                    Board.board3[col-2][row-2] = new Pieces(10);
+                if(row-3 >= 0 && row <= 7 && col-3 >= 0 && col <= 7)
+                    Board.board3[col-3][row-3] = new Pieces(10);
+                if(row-4 >= 0 && row <= 7 && col-4 >= 0 && col <= 7)
+                    Board.board3[col-4][row-4] = new Pieces(10);
+                if(row-5 >= 0 && row <= 7 && col-5 >= 0 && col <= 7)
+                    Board.board3[col-5][row-5] = new Pieces(10);
+                if(row-6 >= 0 && row <= 7 && col-6 >= 0 && col <= 7)
+                    Board.board3[col-6][row-6] = new Pieces(10);
+                if(row-7 >= 0 && row <= 7 && col-7 >= 0 && col <= 7)
+                    Board.board3[col-7][row-7] = new Pieces(10);
+                
+                if(row >= 0 && row+1 <= 7 && col-1 >= 0 && col <= 7)
+                    Board.board3[col-1][row+1] = new Pieces(10);
+                if(row >= 0 && row+2 <= 7 && col-2 >= 0 && col <= 7)
+                    Board.board3[col-2][row+2] = new Pieces(10);
+                if(row >= 0 && row+3 <= 7 && col-3 >= 0 && col <= 7)
+                    Board.board3[col-3][row+3] = new Pieces(10);
+                if(row >= 0 && row+4 <= 7 && col-4 >= 0 && col <= 7)
+                    Board.board3[col-4][row+4] = new Pieces(10);
+                if(row >= 0 && row+5 <= 7 && col-5 >= 0 && col <= 7)
+                    Board.board3[col-5][row+5] = new Pieces(10);
+                if(row >= 0 && row+6 <= 7 && col-6 >= 0 && col <= 7)
+                    Board.board3[col-6][row+6] = new Pieces(10);
+                if(row >= 0 && row+7 <= 7 && col-7 >= 0 && col <= 7)
+                    Board.board3[col-7][row+7] = new Pieces(10);
+                
+                if(row >= 0 && row+1 <= 7 && col >= 0 && col+1 <= 7)
+                    Board.board3[col+1][row+1] = new Pieces(10);
+                if(row >= 0 && row+2 <= 7 && col >= 0 && col+2 <= 7)
+                    Board.board3[col+2][row+2] = new Pieces(10);
+                if(row >= 0 && row+3 <= 7 && col >= 0 && col+3 <= 7)
+                    Board.board3[col+3][row+3] = new Pieces(10);
+                if(row >= 0 && row+4 <= 7 && col >= 0 && col+4 <= 7)
+                    Board.board3[col+4][row+4] = new Pieces(10);
+                if(row >= 0 && row+5 <= 7 && col >= 0 && col+5 <= 7)
+                    Board.board3[col+5][row+5] = new Pieces(10);
+                if(row >= 0 && row+6 <= 7 && col >= 0 && col+6 <= 7)
+                    Board.board3[col+6][row+6] = new Pieces(10);
+                if(row >= 0 && row+7 <= 7 && col >= 0 && col+7 <= 7)
+                    Board.board3[col+7][row+7] = new Pieces(10);
+                
+                if(row-1 >= 0 && row <= 7 && col >= 0 && col+1 <= 7)
+                    Board.board3[col+1][row-1] = new Pieces(10);
+                if(row-2 >= 0 && row <= 7 && col >= 0 && col+2 <= 7)
+                    Board.board3[col+2][row-2] = new Pieces(10);
+                if(row-3 >= 0 && row <= 7 && col >= 0 && col+3 <= 7)
+                    Board.board3[col+3][row-3] = new Pieces(10);
+                if(row-4 >= 0 && row <= 7 && col >= 0 && col+4 <= 7)
+                    Board.board3[col+4][row-4] = new Pieces(10);
+                if(row-5 >= 0 && row <= 7 && col >= 0 && col+5 <= 7)
+                    Board.board3[col+5][row-5] = new Pieces(10);
+                if(row-6 >= 0 && row <= 7 && col >= 0 && col+6 <= 7)
+                    Board.board3[col+6][row-6] = new Pieces(10);
+                if(row-7 >= 0 && row <= 7 && col >= 0 && col+7 <= 7)
+                    Board.board3[col+7][row-7] = new Pieces(10);
             }
             else if(type == 6 || type == 16)
             {
@@ -164,20 +341,51 @@ public class Highlight extends Piece{
                     Board.board3[col][row-6] = new Pieces(10);
                 if(row-7 >= 0 && row <= 7 && col >= 0 && col <= 7)
                     Board.board3[col][row-7] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                
+                if(row >= 0 && row+1 <= 7 && col >= 0 && col <= 7)
                     Board.board3[col][row+1] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                if(row >= 0 && row+2 <= 7 && col >= 0 && col <= 7)
                     Board.board3[col][row+2] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                if(row >= 0 && row+3 <= 7 && col >= 0 && col <= 7)
                     Board.board3[col][row+3] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                if(row >= 0 && row+4 <= 7 && col >= 0 && col <= 7)
                     Board.board3[col][row+4] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                if(row >= 0 && row+5 <= 7 && col >= 0 && col <= 7)
                     Board.board3[col][row+5] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                if(row >= 0 && row+6 <= 7 && col >= 0 && col <= 7)
                     Board.board3[col][row+6] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                if(row >= 0 && row+7 <= 7 && col >= 0 && col <= 7)
                     Board.board3[col][row+7] = new Pieces(10);
+                
+                if(row >= 0 && row <= 7 && col-1 >= 0 && col <= 7)    
+                    Board.board3[col-1][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-2 >= 0 && col <= 7)    
+                    Board.board3[col-2][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-3 >= 0 && col <= 7)    
+                    Board.board3[col-3][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-4 >= 0 && col <= 7)    
+                    Board.board3[col-4][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-5 >= 0 && col <= 7)    
+                    Board.board3[col-5][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-6 >= 0 && col <= 7)    
+                    Board.board3[col-6][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col-7 >= 0 && col <= 7)    
+                    Board.board3[col-7][row] = new Pieces(10);
+                
+                if(row >= 0 && row <= 7 && col >= 0 && col+1 <= 7)    
+                    Board.board3[col+1][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+2 <= 7)    
+                    Board.board3[col+2][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+3 <= 7)    
+                    Board.board3[col+3][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+4 <= 7)    
+                    Board.board3[col+4][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+5 <= 7)    
+                    Board.board3[col+5][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+6 <= 7)    
+                    Board.board3[col+6][row] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col+7 <= 7)    
+                    Board.board3[col+7][row] = new Pieces(10);
             }
             Board.type = 0;
     }
