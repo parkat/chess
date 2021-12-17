@@ -30,6 +30,7 @@ public class Board {
         highlight = new Highlight();
         clickMode = false;
         type = 0;
+        highlight.reset();
         
     int ydelta = Window.getHeight2()/NUM_ROWS;
         int xdelta = Window.getWidth2()/NUM_COLUMNS;
@@ -158,7 +159,7 @@ public class Board {
            
                 int column = xpixelOffset/xdelta;
       
-
+                
                 
           
         int row = ypixelOffset/ydelta;
@@ -168,7 +169,9 @@ public class Board {
       board[column][row]  =  board2; 
 //        highlight.Draw(g,column,row,board2.getid());
 //  System.out.println(Pieces.getID());
-         }    
+
+        highlight.reset();
+        }    
     }
      public static void setPiece(int xdelta,int ydelta)
         {

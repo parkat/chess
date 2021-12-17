@@ -70,27 +70,27 @@ public class Highlight extends Piece{
             }
             else if(type == 1)
             {
-                //highlight king
-                if(row >= 0 && row <= 7 && col >= 1 && col < 7)
+                //highlight black king
+                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
                     Board.board3[col][row-1] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 1 && col < 7)
+                if(row >= 0 && row <= 7 && col > 0 && col <= 7)
                     Board.board3[col-1][row-1] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 1 && col < 7)    
+                if(row >= 0 && row <= 7 && col >= 0 && col < 7)    
                     Board.board3[col+1][row-1] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 1 && col < 7)    
+                if(row >= 0 && row <= 7 && col >= 0 && col < 7)    
                     Board.board3[col+1][row] = new Pieces(10);
-                if(row >= 0 && row <= 7 && col >= 1 && col < 7)    
+                if(row >= 0 && row <= 7 && col > 0 && col <= 7)    
                     Board.board3[col-1][row] = new Pieces(10);
-                if(row >= 0 && row < 7 && col >= 1 && col < 7)
+                if(row >= 0 && row < 7 && col >= 0 && col < 7)
                     Board.board3[col+1][row+1] = new Pieces(10);
-                if(row >= 0 && row < 7 && col >= 1 && col < 7)
+                if(row >= 0 && row < 7 && col >= 0 && col <= 7)
                     Board.board3[col][row+1] = new Pieces(10);
-                if(row >= 0 && row < 7 && col >= 1 && col < 7)
+                if(row >= 0 && row < 7 && col > 0 && col <= 7)
                     Board.board3[col-1][row+1] = new Pieces(10);
             }
             else if(type == 11)
             {
-                //highlight king
+                //highlight white king
                 if(row > 0 && row < 7 && col >= 1 && col < 7)
                     Board.board3[col][row-1] = new Pieces(10);
                 if(row > 0 && row < 7 && col >= 1 && col < 7)
@@ -112,18 +112,17 @@ public class Highlight extends Piece{
             {
                 //highlight bishop
                 
-                
             }
             else if(type == 3 || type == 13)
             {
                 //highlight knight 
-                if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
+                if(row >= 0 && row < 6 && col >= 0 && col <= 5)
                     Board.board3[col+2][row+2] = new Pieces(10);
-                if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
+                if(row > 1 && row <= 7 && col >= 0 && col <= 5)
                      Board.board3[col+2][row-2] = new Pieces(10);
-                if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
+                if(row > 1 && row <= 7 && col > 1 && col <= 7)
                      Board.board3[col-2][row-2] = new Pieces(10);
-                if(row >= 1 && row <= 6 && col >= 1 && col <= 6)
+                if(row >= 0 && row < 6 && col > 1 && col <= 7)
                      Board.board3[col-2][row+2] = new Pieces(10);
                 
             }
@@ -151,10 +150,36 @@ public class Highlight extends Piece{
             else if(type == 6 || type == 16)
             {
                 //highlight rook
-                
+                if(row-1 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-1] = new Pieces(10);
+                if(row-2 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-2] = new Pieces(10);
+                if(row-3 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-3] = new Pieces(10);
+                if(row-4 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-4] = new Pieces(10);
+                if(row-5 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-5] = new Pieces(10);
+                if(row-6 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-6] = new Pieces(10);
+                if(row-7 >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row-7] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+1] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+2] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+3] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+4] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+5] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+6] = new Pieces(10);
+                if(row >= 0 && row <= 7 && col >= 0 && col <= 7)
+                    Board.board3[col][row+7] = new Pieces(10);
             }
             Board.type = 0;
-            
     }
         
     public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta)
@@ -165,6 +190,16 @@ public class Highlight extends Piece{
     {
         
     }
-
+    
+    public static void reset()
+    {
+        for (int zrow=0;zrow<Board.getRows();zrow++)
+        {
+            for (int zcol=0;zcol<Board.getColumns();zcol++)        
+            {
+                Board.board3[zcol][zrow] = null;
+            }
+        }
+    }
 }
 

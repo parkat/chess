@@ -57,7 +57,7 @@ public class Chess extends JFrame implements Runnable {
                     
                      
                  Board.Reset();
-                   
+                 
 
                 }
                 repaint();
