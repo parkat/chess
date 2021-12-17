@@ -21,7 +21,7 @@ public class Board {
             for (int zcol=0;zcol<NUM_COLUMNS;zcol++)
                 //points to null or instance of peice
                 board[zrow][zcol] = null;  
-       
+       Menu.turn = false;
         board2 = null;
      highlight = null;
    highlight = new Highlight();
@@ -122,6 +122,8 @@ public class Board {
       
  
       board[column][row]  =  board2; 
+      
+      Menu.turn = !Menu.turn;
   
          }    
     }

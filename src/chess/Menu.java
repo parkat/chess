@@ -1,12 +1,15 @@
 
 package chess;
 
+import static chess.Chess.button;
+import static chess.Chess.frame;
 import java.awt.*;
 import javax.swing.*;
 
 public class Menu extends JFrame{
     public static boolean show = true;
     private static boolean color;
+    public static boolean turn = false;
     Menu(boolean _show)
     {
        show = true;  
@@ -14,10 +17,18 @@ public class Menu extends JFrame{
     
     public static void Draw(Graphics2D g)
     {
-       
+        if(turn == false){
+        g.setColor(Color.WHITE);
+        g.fillRect(280,37, 100, 30);
+        }
+        else {
+            g.setColor(Color.BLACK);
+        g.fillRect(280,37, 100, 30);
+        }
+        
         if(show != false){
             g.setColor(Color.BLACK);
-            g.fillRect(0, 0, 800, 800);
+            g.fillRect(0, 0, 8000, 8000);
             g.setColor(Color.DARK_GRAY);
             g.fillRect(50, 80, 550, 500);
             
@@ -45,7 +56,7 @@ public class Menu extends JFrame{
             
             g.setColor(Color.WHITE);
         g.setFont (new Font ("OCR A",Font.BOLD, 15));                  
-            g.drawString("      | pawns can move and take backwards", 85, 280);
+            g.drawString("      | pawns can move two places forward anytime not just at the start", 85, 280);
             
              g.setColor(Color.WHITE);
         g.setFont (new Font ("OCR A",Font.BOLD, 15));                  
@@ -58,8 +69,16 @@ public class Menu extends JFrame{
              g.setColor(Color.WHITE);
         g.setFont (new Font ("OCR A",Font.BOLD, 15));                  
             g.drawString("  Press [Enter] to bring back this screen", 200, 380);
-        
+        /*
+            button = new JButton("hello");
+     //frame.setLayout(new FlowLayout());
+            frame.add(button);
+            button.setBounds(50,100,95,30);
+          */
         }
+        
+        
+        
     }
     public static void mous(Graphics2D g,int x, int y)
     {

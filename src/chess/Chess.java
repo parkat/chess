@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.sound.sampled.*; 
 //commenting to test
 
 public class Chess extends JFrame implements Runnable {
@@ -16,14 +17,15 @@ public class Chess extends JFrame implements Runnable {
      public static Chess frame = new Chess();
    public static  JButton button;
     public static boolean yes = true;
+    
 
     Image chessboard;
     Image kitten;
     
     public static void main(String[] args) {
      
-        
-      button = new JButton("hello");
+               
+
      //  Chess frame = new Chess();
      frame.setLayout(new FlowLayout());
      
@@ -36,7 +38,7 @@ public class Chess extends JFrame implements Runnable {
 
     public Chess() {
         
-        setTitle("Chess | By Parker and Jared");
+        setTitle("Chess: the bad version                                                                                              left arrow key");
         addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
 
@@ -146,10 +148,17 @@ public class Chess extends JFrame implements Runnable {
               if(kitty == true){
         kitten = Toolkit.getDefaultToolkit().getImage("./PNGs/Cat.GIF");
         g.drawImage(kitten,200,200,350,130,this);
+        if(Menu.show == false){
+         g.setColor(Color.BLACK);
+         g.setFont (new Font ("Times New Roman",Font.BOLD, 20)); 
         }
-            button = new JButton("hello");
-     frame.setLayout(new FlowLayout());
-            frame.add(button);
+        else{
+              g.setColor(Color.WHITE);
+        g.setFont (new Font ("Times New Roman",Font.BOLD, 15));     
+        }
+            g.drawString("  Made by Jared Yakubsin and Parker Chaffin ", 169, 69);
+        }
+       
         gOld.drawImage(image, 0, 0, null);
         
     }
