@@ -47,14 +47,14 @@ public class Chess extends JFrame implements Runnable {
            
                Menu.buttonClick(e.getX(), e.getY());
               if (Board.board2 !=null)
-                   Board.addPiece(e.getX(),e.getY());
+                   Board.addPiece(g,e.getX(),e.getY());
                 
                     Board.board2 = null;
               
                 }
 
                 if (e.BUTTON3 == e.getButton()) {
-                      Board.movePiece(e.getX(),e.getY());
+                      Board.movePiece(g,e.getX(),e.getY());
                  
                   
 

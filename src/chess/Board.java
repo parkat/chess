@@ -8,9 +8,10 @@ public class Board {
     private final static int NUM_ROWS = 8;
     private final static int NUM_COLUMNS = 8;      
     public static Piece board[][] = new Piece[NUM_ROWS][NUM_COLUMNS];
+    public static Piece board3[][] = new Piece[NUM_ROWS][NUM_COLUMNS];
       public static Piece board2;
     private static Highlight highlight;
-    
+     public static int type;
 
     public static void Reset() {
 //clear the board.
@@ -18,9 +19,11 @@ public class Board {
       Chess.kitty = false;
       Menu.show = true;
         for (int zrow=0;zrow<NUM_ROWS;zrow++)
-            for (int zcol=0;zcol<NUM_COLUMNS;zcol++)
+            for (int zcol=0;zcol<NUM_COLUMNS;zcol++){
                 //points to null or instance of peice
-                board[zrow][zcol] = null;  
+                board[zrow][zcol] = null; 
+                board3[zrow][zcol] = null;
+            }
        Menu.turn = false;
         board2 = null;
      highlight = null;
@@ -29,6 +32,8 @@ public class Board {
     int ydelta = Window.getHeight2()/NUM_ROWS;
         int xdelta = Window.getWidth2()/NUM_COLUMNS;
   setPiece(xdelta,ydelta);
+   type = 0;
+   highlight.reset();
        
     }
     
@@ -60,12 +65,14 @@ public class Board {
             {
                 if (board[zrow][zcol] != null)
                     board[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta,thisObj);
+                 if (board3[zrow][zcol] != null)	
+                    board3[zrow][zcol].draw(g, zrow, zcol,xdelta, ydelta,thisObj);
             }
         }  
        
     
     }
-     public static void movePiece(int xpix, int ypix)
+     public static void movePiece(Graphics2D g,int xpix, int ypix)
     {
        
         
@@ -86,17 +93,22 @@ public class Board {
         
   if(board[col][row] != null)
   {
+     
+      
         board2 =board[col][row];
-       
+        
+         type = board2.getid();
+       highlight.Draw(g,row,col,xdelta,ydelta,board2.getid());
+
           board[col][row] = null;   
        
-          board2.getId();
+          
   }
      //   System.out.println(board2);
                  
         
     }
-    public static void addPiece(int xpix ,int ypix)
+    public static void addPiece(Graphics2D g,int xpix ,int ypix)
     {
          {
            
@@ -124,6 +136,7 @@ public class Board {
       board[column][row]  =  board2; 
       
       Menu.turn = !Menu.turn;
+       highlight.reset();
   
          }    
     }

@@ -8,6 +8,11 @@ public abstract class Piece {
     private Color color;
     private int id;
     
+    Piece()
+    {
+    
+    }
+    
     Piece(int _id)
     {
         id = _id;
@@ -17,14 +22,17 @@ public abstract class Piece {
     {
         return (color);
     }
-
+    public int getid()
+    {
+        return (id);
+    }
+    
+   // public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta);  
+    
     public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta,Chess thisObj);
       
 
-    public int getId()
-    {
-        return(id);
-    }
+    
     
     
 }
