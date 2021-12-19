@@ -101,7 +101,7 @@ public class Board {
        highlight.Draw(g,row,col,xdelta,ydelta,board2.getid());
 
           board[col][row] = null;   
-       
+       board2.getid();
           
   }
      //   System.out.println(board2);

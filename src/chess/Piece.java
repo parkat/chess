@@ -22,17 +22,24 @@ public abstract class Piece {
     {
         return (color);
     }
-    public int getid()
-    {
-        return (id);
-    }
+//    public int getid()
+//    {
+//       return (id);
+//    }
     
-   // public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta);  
+    public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta);  
     
     public abstract void draw(Graphics2D g,int row,int column,int xdelta,int ydelta,Chess thisObj);
       
-
+public int getId()
+    {
+        return(id);
+    }
     
+    public int getid()
+    {
+       return (id);
+    }
     
     
 }

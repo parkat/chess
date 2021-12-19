@@ -54,10 +54,9 @@ public class Chess extends JFrame implements Runnable {
                 }
 
                 if (e.BUTTON3 == e.getButton()) {
+                    
                       Board.movePiece(g,e.getX(),e.getY());
                  
-                  
-
                 }
                    if (e.BUTTON2 == e.getButton()) {
                     
@@ -139,11 +138,13 @@ public class Chess extends JFrame implements Runnable {
         g.drawImage(chessboard,Window.getX(-75),Window.getY(-67),Window.getWidth2()+150,Window.getHeight2()+130,this);
 
         
-      
+        Highlight.Draw(g, ERROR, ERROR, WIDTH, WIDTH, Board.type);
+
                 
             Board.Draw(g,this);
             Menu.Draw(g);
             Menu.button(g);
+           
             
               if(kitty == true){
         kitten = Toolkit.getDefaultToolkit().getImage("./PNGs/Cat.GIF");

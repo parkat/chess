@@ -4,47 +4,54 @@ import java.awt.*;
 
 class Pieces extends Piece  {
     int id;
+    static int ID;
     private Image img;
     
     Pieces(int _id)
     {
      super(_id);
      id = _id;
+     ID = id;
      img = null;
     setPiece();                                          
     }
     
-   private void setPiece()
-   {
-       if(id == 1)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bking.png"); 
-        if(id == 11)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wking.png"); 
-         if(id == 2)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bbishop.png"); 
-         if(id == 12)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wbishop.png"); 
-         if(id == 3)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bknight.png"); 
-          if(id == 13)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wknight.png"); 
-           if(id == 4)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bpawn.png"); 
-            if(id == 14)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wpawn.png"); 
-            if(id == 5)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bqueen.png"); 
-            if(id == 15)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wqueen.png"); 
-            if(id == 6)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/brook.png"); 
-            if(id == 16)
-        img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wrook.png"); 
+    private void setPiece()
+    {
+        if(id == 1)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bking.png"); 
+        else if(id == 11)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wking.png"); 
+        else if(id == 2)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bbishop.png"); 
+        else if(id == 12)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wbishop.png"); 
+        else if(id == 3)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bknight.png"); 
+        else  if(id == 13)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wknight.png"); 
+        else if(id == 4)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bpawn.png"); 
+        else if(id == 14)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wpawn.png"); 
+        else if(id == 5)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/bqueen.png"); 
+        else if(id == 15)
+             img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wqueen.png"); 
+        else if(id == 6)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/brook.png"); 
+        else  if(id == 16)
+            img =   Toolkit.getDefaultToolkit().getImage("./PNGs/wrook.png"); 
+        else if(id == 10)
+             img = Toolkit.getDefaultToolkit().getImage("./PNGs/bluedot.png"); 
            
+    }
+    
+    
+   public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta)   
+   {
+       
    }
-    
-    
-    
     
     
     
@@ -74,8 +81,13 @@ class Pieces extends Piece  {
     }    
 
 
-public int getid()
-{
-return(id);
-}
+    public int getid()
+    {
+        return(id);
+    }
+        public static int getID()
+    {
+        return(ID);
+    }
+    
 }
